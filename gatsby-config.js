@@ -1,7 +1,6 @@
 const siteMetadata = {
-  name: 'Gatsby Strict Starter',
-  description:
-    'Demo for a Gatsby starter with strict linting and auto-formatting rules.',
+  name: "Andris Borbas's personal site",
+  description: "Andris Borbas's personal site.",
 };
 
 module.exports = {

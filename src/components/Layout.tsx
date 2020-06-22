@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
@@ -29,7 +30,9 @@ export function Layout({ children }: LayoutProps): JSX.Element {
 
       <header>{/* TODO */}</header>
 
-      <main>{children}</main>
+      <Box as="main" maxW={['100%', '540px', '720px', '960px', '1140px']}>
+        {children}
+      </Box>
 
       <footer>{/* TODO */}</footer>
     </React.StrictMode>
