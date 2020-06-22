@@ -38,6 +38,7 @@ export function Layout({ children }: LayoutProps): JSX.Element {
         flex="1 0 auto"
         p={0}
         m={0}
+        mx={['1rem', 'auto']}
       >
         {children}
       </Box>

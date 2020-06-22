@@ -12,9 +12,9 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         ...siteMetadata,
-        display: 'minimal-ui',
-        theme_color: '#663399',
-        background_color: 'white',
+        // display: 'minimal-ui',
+        // theme_color: '#663399',
+        // background_color: 'white',
         icon: 'src/assets/favicon.png',
         lang: 'en-US',
         start_url: '/',
