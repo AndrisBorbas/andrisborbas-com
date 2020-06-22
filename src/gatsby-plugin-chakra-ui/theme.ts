@@ -1,4 +1,4 @@
-import theme, { Theme } from '@chakra-ui/theem';
+import theme from '../../chakra';
 
 const customTheme = {
   ...theme,

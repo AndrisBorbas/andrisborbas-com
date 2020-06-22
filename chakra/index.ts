@@ -1,22 +1,22 @@
-import foundations from "./foundations"
-import components from "./components"
-import styles from "./styles"
+import components from './components';
+import foundations from './foundations';
+import styles from './styles';
 
 /**
  * Color mode config
  */
 const config = {
   useSystemColorMode: false,
-  initialColorMode: "light",
-}
+  initialColorMode: 'dark',
+};
 
 const theme = {
   ...foundations,
   components,
   styles,
   config,
-}
+};
 
-export type Theme = typeof theme
+export type Theme = typeof theme;
 
-export default theme
+export default theme;
