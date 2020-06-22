@@ -1,4 +1,4 @@
-import theme from '../../chakra';
+import theme, { Theme } from '../../chakra';
 
 const customTheme = {
   ...theme,

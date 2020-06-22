@@ -30,7 +30,15 @@ export function Layout({ children }: LayoutProps): JSX.Element {
 
       <header>{/* TODO */}</header>
 
-      <Box as="main" maxW={['100%', '540px', '720px', '960px', '1140px']}>
+      <Box
+        as="main"
+        maxW={['100%', '540px', '720px', '960px', '1140px']}
+        w="100%"
+        flexShrink={0}
+        flex="1 0 auto"
+        p={0}
+        m={0}
+      >
         {children}
       </Box>
 
