@@ -1,4 +1,12 @@
-import { Box } from '@chakra-ui/core';
+import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+} from '@chakra-ui/accordion';
+import { Box, Heading } from '@chakra-ui/core';
+import { css } from '@emotion/core';
 import React from 'react';
 
 import { Layout } from '../components/Layout';
@@ -6,7 +14,74 @@ import { Layout } from '../components/Layout';
 export default function IndexPage(): JSX.Element {
   return (
     <Layout>
-      <Box minH={2000}>Hello, world!</Box>
+      <Heading as="h1" size="2xl" mb={8}>
+        Home Page
+      </Heading>
+      <Accordion
+        defaultIndex={[1, 3]}
+        allowMultiple
+        allowToggle
+        background="linear-gradient(rgba(144, 144, 144, 0.8125), rgba(80, 80, 80, 0.75))"
+        css={css`
+          @supports (
+            (-webkit-backdrop-filter: none) or (backdrop-filter: none) or
+              (-webkit-backdrop-filter: blur(7px)) or
+              (backdrop-filter: blur(7px))
+          ) {
+            & {
+              -webkit-backdrop-filter: blur(7px);
+              -ms-backdrop-filter: blur(7px);
+              backdrop-filter: blur(7px);
+              background: hsla(220, 26%, 35%, 0.1875) !important;
+            }
+          }
+        `}
+      >
+        <AccordionItem>
+          <AccordionButton>
+            <Box flex="1" textAlign="left">
+              Section 1 title
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel pb={4}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem>
+          <AccordionButton>
+            <Box flex="1" textAlign="left">
+              Section 1 title
+            </Box>
+            <AccordionIcon />
+          </AccordionButton>
+          <AccordionPanel pb={4}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+      <Box minH={1000} />
     </Layout>
   );
 }

@@ -4,6 +4,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import Navbar from './navbar/Navbar';
+import Stripes from './Stripes';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -30,7 +31,7 @@ export function Layout({ children }: LayoutProps): JSX.Element {
         <meta name="description" content={data.site.siteMetadata.description} />
       </Helmet>
 
-      <InitializeColorMode />
+      <Stripes />
 
       <Navbar />
 

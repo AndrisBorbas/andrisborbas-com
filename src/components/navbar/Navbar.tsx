@@ -1,7 +1,25 @@
-import { Box, css, Heading, Image, Link, Stack } from '@chakra-ui/core';
+import {
+  Box,
+  Button,
+  css,
+  Heading,
+  Icon,
+  Image,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuGroup,
+  MenuItem,
+  MenuItemOption,
+  MenuList,
+  MenuOptionGroup,
+  Stack,
+} from '@chakra-ui/core';
 import React from 'react';
 
 import favicon from '../../assets/favicon.png';
+import Stripes from '../Stripes';
+import NavLink from './NavLink';
 // import { css } from '@emotion/core';
 
 export default function Navbar(): JSX.Element {
@@ -19,31 +37,45 @@ export default function Navbar(): JSX.Element {
       css={css`
         @supports (
           (-webkit-backdrop-filter: none) or (backdrop-filter: none) or
-            (-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px))
+            (-webkit-backdrop-filter: blur(7px)) or (backdrop-filter: blur(7px))
         ) {
           & {
-            -webkit-backdrop-filter: blur(6px);
-            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(7px);
+            backdrop-filter: blur(7px);
             background: rgba(144, 144, 144, 0.1875) !important;
-            background: #9993 !important;
           }
         }
       `}
     >
       <Stack spacing={4} direction="row" align="center">
-        <Link href="/">
+        <NavLink href="/">
           <Image src={favicon} w="30px" borderRadius="5px" />
-        </Link>
-        <Link href="/">
+        </NavLink>
+        <NavLink href="/">
           <Heading as="h3" size="sm">
             Home
           </Heading>
-        </Link>
-        <Link href="https://github.com/AndrisBorbas">
+        </NavLink>
+        <NavLink href="https://github.com/AndrisBorbas" target="blank">
           <Heading as="h3" size="sm">
             My GitHub
           </Heading>
-        </Link>
+        </NavLink>
+        <Menu>
+          <MenuButton as={Button} rightIcon={<Icon name="chevron-down" />}>
+            Projects
+          </MenuButton>
+          <MenuList>
+            <MenuItem>
+              <NavLink
+                href="https://andrisborbas.github.io/FactorioRatioCounter"
+                target="blank"
+              >
+                Factorio Ratio Counter
+              </NavLink>
+            </MenuItem>
+          </MenuList>
+        </Menu>
       </Stack>
     </Box>
   );
