@@ -1,28 +1,61 @@
 {
-  "root": true,
-  "env": { "browser": true },
-  "parserOptions": { "project": "./tsconfig.json" },
   "extends": [
-    "airbnb-typescript",
-    "airbnb/hooks",
-    "plugin:@typescript-eslint/eslint-recommended",
+    "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jest/recommended",
-    "plugin:testing-library/recommended",
-    "plugin:testing-library/react",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:prettier/recommended",
     "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    "prettier/react",
+    "prettier/@typescript-eslint"
   ],
-  "plugins": ["simple-import-sort"],
-
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "jest": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "rules": {
-    // Auto-sort imports
+    "prettier/prettier": "error",
     "sort-imports": "off",
     "import/order": "off",
+    "jsx-a11y/href-no-hash": ["off"],
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react/jsx-filename-extension": [
+      "off",
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "max-len": [
+      "warn",
+      {
+        "tabWidth": 2,
+        "comments": 100,
+        "ignoreComments": false,
+        "ignoreTrailingComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true,
+        "ignoreRegExpLiterals": true
+      }
+    ],
     "simple-import-sort/sort": "error",
 
     // Using a type system makes it safe enough to spread props
-    "react/jsx-props-no-spreading": "off"
-  }
+    "react/jsx-props-no-spreading": "off",
+
+    //temp fix
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/naming-convention": "off"
+  },
+  "plugins": ["simple-import-sort", "@typescript-eslint"]
 }
