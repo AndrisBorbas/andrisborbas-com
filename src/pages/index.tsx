@@ -6,7 +6,7 @@ import { Layout } from '../components/Layout';
 export default function IndexPage(): JSX.Element {
   return (
     <Layout>
-      <Box>Hello, world!</Box>
+      <Box minH={2000}>Hello, world!</Box>
     </Layout>
   );
 }

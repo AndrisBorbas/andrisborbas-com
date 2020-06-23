@@ -1,7 +1,9 @@
-import { Box } from '@chakra-ui/core';
+import { Box, InitializeColorMode } from '@chakra-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
+
+import Navbar from './navbar/Navbar';
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -28,7 +30,9 @@ export function Layout({ children }: LayoutProps): JSX.Element {
         <meta name="description" content={data.site.siteMetadata.description} />
       </Helmet>
 
-      <header>{/* TODO */}</header>
+      <InitializeColorMode />
+
+      <Navbar />
 
       <Box
         as="main"
