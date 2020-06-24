@@ -1,6 +1,8 @@
 {
+  "root": true,
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
@@ -8,6 +10,7 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "airbnb",
+    "airbnb/hooks",
     "airbnb-typescript",
     "plugin:prettier/recommended",
     "prettier",
@@ -15,11 +18,7 @@
     "prettier/@typescript-eslint"
   ],
   "env": {
-    "browser": true,
-    "commonjs": true,
-    "es6": true,
-    "jest": true,
-    "node": true
+    "browser": true
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -39,13 +38,7 @@
       "warn",
       {
         "tabWidth": 2,
-        "comments": 100,
-        "ignoreComments": false,
-        "ignoreTrailingComments": false,
-        "ignoreUrls": false,
-        "ignoreStrings": false,
-        "ignoreTemplateLiterals": false,
-        "ignoreRegExpLiterals": false
+        "comments": 100
       }
     ],
     "simple-import-sort/sort": "error",
