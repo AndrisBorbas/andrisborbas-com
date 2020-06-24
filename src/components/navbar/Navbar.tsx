@@ -33,17 +33,13 @@ export default function Navbar(): JSX.Element {
       zIndex={1000}
       mb={4}
       p={4}
-      background="linear-gradient(rgba(144, 144, 144, 0.8125), rgba(80, 80, 80, 0.75))"
+      // background="linear-gradient(rgba(144, 144, 144, 0.8125), rgba(80, 80, 80, 0.75))"
       css={css`
-        @supports (
-          (-webkit-backdrop-filter: none) or (backdrop-filter: none) or
-            (-webkit-backdrop-filter: blur(7px)) or (backdrop-filter: blur(7px))
-        ) {
-          & {
-            -webkit-backdrop-filter: blur(7px);
-            backdrop-filter: blur(7px);
-            background: rgba(144, 144, 144, 0.1875) !important;
-          }
+        & {
+          -webkit-backdrop-filter: blur(7px);
+          -ms-backdrop-filter: blur(7px);
+          backdrop-filter: blur(7px);
+          background: hsla(220, 26%, 35%, 0.1875) !important;
         }
       `}
     >
@@ -74,6 +70,7 @@ export default function Navbar(): JSX.Element {
                 Factorio Ratio Counter
               </NavLink>
             </MenuItem>
+            <MenuDivider />
           </MenuList>
         </Menu>
       </Stack>

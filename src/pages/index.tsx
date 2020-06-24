@@ -10,6 +10,7 @@ import { css } from '@emotion/core';
 import React from 'react';
 
 import { Layout } from '../components/Layout';
+import Stripes from '../components/Stripes';
 
 export default function IndexPage(): JSX.Element {
   return (
@@ -20,8 +21,7 @@ export default function IndexPage(): JSX.Element {
       <Accordion
         defaultIndex={[1, 3]}
         allowMultiple
-        allowToggle
-        background="linear-gradient(rgba(144, 144, 144, 0.8125), rgba(80, 80, 80, 0.75))"
+        // background="linear-gradient(rgba(144, 144, 144, 0.8125), rgba(80, 80, 80, 0.75))"
         css={css`
           @supports (
             (-webkit-backdrop-filter: none) or (backdrop-filter: none) or

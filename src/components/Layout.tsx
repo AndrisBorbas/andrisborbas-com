@@ -1,4 +1,4 @@
-import { Box, InitializeColorMode } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet';
