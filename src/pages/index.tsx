@@ -21,7 +21,7 @@ export default function IndexPage(): JSX.Element {
       <Accordion
         defaultIndex={[1, 3]}
         allowMultiple
-        // background="linear-gradient(rgba(144, 144, 144, 0.8125), rgba(80, 80, 80, 0.75))"
+        bg="hsla(220, 26%, 35%, 0.1875) !important"
         css={css`
           @supports (
             (-webkit-backdrop-filter: none) or (backdrop-filter: none) or
@@ -32,7 +32,6 @@ export default function IndexPage(): JSX.Element {
               -webkit-backdrop-filter: blur(7px);
               -ms-backdrop-filter: blur(7px);
               backdrop-filter: blur(7px);
-              background: hsla(220, 26%, 35%, 0.1875) !important;
             }
           }
         `}

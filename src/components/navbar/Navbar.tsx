@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  css,
   Heading,
   Icon,
   Image,
@@ -15,12 +14,12 @@ import {
   MenuOptionGroup,
   Stack,
 } from '@chakra-ui/core';
+import { css } from '@emotion/core';
 import React from 'react';
 
 import favicon from '../../assets/favicon.png';
 import Stripes from '../Stripes';
 import NavLink from './NavLink';
-// import { css } from '@emotion/core';
 
 export default function Navbar(): JSX.Element {
   return (
@@ -33,13 +32,17 @@ export default function Navbar(): JSX.Element {
       zIndex={1000}
       mb={4}
       p={4}
-      // background="linear-gradient(rgba(144, 144, 144, 0.8125), rgba(80, 80, 80, 0.75))"
+      bg="hsla(220, 26%, 35%, 0.1875) !important"
       css={css`
-        & {
-          -webkit-backdrop-filter: blur(7px);
-          -ms-backdrop-filter: blur(7px);
-          backdrop-filter: blur(7px);
-          background: hsla(220, 26%, 35%, 0.1875) !important;
+        @supports (
+          (-webkit-backdrop-filter: none) or (backdrop-filter: none) or
+            (-webkit-backdrop-filter: blur(7px)) or (backdrop-filter: blur(7px))
+        ) {
+          & {
+            -webkit-backdrop-filter: blur(7px);
+            -ms-backdrop-filter: blur(7px);
+            backdrop-filter: blur(7px);
+          }
         }
       `}
     >
