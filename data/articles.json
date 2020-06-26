@@ -8,7 +8,7 @@
     "minHeight": ["310px", "310px", "310px", "330px", "400px"],
     "imageWidth": "33%",
     "buttonText": "Download HQ",
-    "buttonLink": "https://www.andrisborbas.com/static/images/camocarbonfiberhq.mp4"
+    "buttonLink": "#/static/images/camocarbonfiberhq.mp4"
   },
   {
     "id": 1,
@@ -19,7 +19,7 @@
     "minHeight": ["310px", "310px", "310px", "330px", "400px"],
     "imageWidth": "33%",
     "buttonText": "Download HQ",
-    "buttonLink": "https://www.andrisborbas.com/static/images/desertbedrockhq.mp4"
+    "buttonLink": "#/static/images/desertbedrockhq.mp4"
   },
   {
     "id": 2,
