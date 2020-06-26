@@ -18,7 +18,6 @@ import { css } from '@emotion/core';
 import React from 'react';
 
 import favicon from '../../assets/favicon.png';
-import Stripes from '../Stripes';
 import NavLink from './NavLink';
 
 export default function Navbar(): JSX.Element {

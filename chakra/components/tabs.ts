@@ -1,134 +1,134 @@
 import {
-  Props,
-  mode,
   ComponentTheme,
-  StyleObject,
   getColor,
-} from "@chakra-ui/theme-tools"
+  mode,
+  Props,
+  StyleObject,
+} from '@chakra-ui/theme-tools';
 
 function getLineStyle(props: Props) {
-  const { colorScheme: c } = props
+  const { colorScheme: c } = props;
   return {
     TabList: {
-      borderBottom: "2px solid",
-      borderColor: "inherit",
+      borderBottom: '2px solid',
+      borderColor: 'inherit',
     },
     Tab: {
-      borderBottom: "2px solid",
-      borderColor: "transparent",
-      marginBottom: "-2px",
+      borderBottom: '2px solid',
+      borderColor: 'transparent',
+      marginBottom: '-2px',
       _selected: {
         color: mode(`${c}.600`, `${c}.300`)(props),
-        borderColor: "currentColor",
+        borderColor: 'currentColor',
       },
       _active: {
-        bg: mode("gray.200", "whiteAlpha.300")(props),
+        bg: mode('gray.200', 'whiteAlpha.300')(props),
       },
       _disabled: {
         opacity: 0.4,
-        cursor: "not-allowed",
+        cursor: 'not-allowed',
       },
     },
-  }
+  };
 }
 
 function getEnclosedStyle(props: Props) {
-  const { colorScheme: c } = props
+  const { colorScheme: c } = props;
   return {
     Tab: {
-      borderTopRadius: "md",
-      border: "1px solid",
-      borderColor: "transparent",
-      marginBottom: "-1px",
+      borderTopRadius: 'md',
+      border: '1px solid',
+      borderColor: 'transparent',
+      marginBottom: '-1px',
       _selected: {
         color: mode(`${c}.600`, `${c}.300`)(props),
-        borderColor: "inherit",
+        borderColor: 'inherit',
         borderBottomColor: mode(`white`, `gray.800`)(props),
       },
     },
     TabList: {
-      marginBottom: "-1px",
-      borderBottom: "1px solid",
-      borderColor: "inherit",
+      marginBottom: '-1px',
+      borderBottom: '1px solid',
+      borderColor: 'inherit',
     },
-  }
+  };
 }
 
 function getEnclosedColoredStyle(props: Props) {
-  const { colorScheme: c } = props
+  const { colorScheme: c } = props;
   return {
     Tab: {
-      border: "1px solid",
-      borderColor: "inherit",
+      border: '1px solid',
+      borderColor: 'inherit',
       bg: mode(`gray.50`, `whiteAlpha.50`)(props),
-      marginBottom: "-1px",
+      marginBottom: '-1px',
       _notLast: {
-        mr: "-1px",
+        mr: '-1px',
       },
       _selected: {
-        bg: mode(`#fff`, "gray.800")(props),
+        bg: mode(`#fff`, 'gray.800')(props),
         color: mode(`${c}.600`, `${c}.300`)(props),
-        borderColor: "inherit",
-        borderTopColor: "currentColor",
-        borderBottomColor: "transparent",
+        borderColor: 'inherit',
+        borderTopColor: 'currentColor',
+        borderBottomColor: 'transparent',
       },
     },
     TabList: {
-      marginBottom: "-1px",
-      borderBottom: "1px solid",
-      borderColor: "inherit",
+      marginBottom: '-1px',
+      borderBottom: '1px solid',
+      borderColor: 'inherit',
     },
-  }
+  };
 }
 
 function getSoftRoundedStyle(props: any): StyleObject {
-  const { colorScheme: c, theme: t } = props
+  const { colorScheme: c, theme: t } = props;
   return {
     Tab: {
-      borderRadius: "full",
-      fontWeight: "semibold",
-      color: "gray.600",
+      borderRadius: 'full',
+      fontWeight: 'semibold',
+      color: 'gray.600',
       _selected: {
         color: getColor(t, `${c}.700`),
         bg: getColor(t, `${c}.100`),
       },
     },
     TabList: {},
-  }
+  };
 }
 
 function getSolidRoundedStyle(props: Props): StyleObject {
-  const { colorScheme: c } = props
+  const { colorScheme: c } = props;
   return {
     Tab: {
-      borderRadius: "full",
-      fontWeight: "semibold",
-      color: mode("gray.600", "inherit")(props),
+      borderRadius: 'full',
+      fontWeight: 'semibold',
+      color: mode('gray.600', 'inherit')(props),
       _selected: {
-        color: mode(`#fff`, "gray.800")(props),
+        color: mode(`#fff`, 'gray.800')(props),
         bg: mode(`${c}.600`, `${c}.300`)(props),
       },
     },
     TabList: {},
-  }
+  };
 }
 
 const Tabs: ComponentTheme = {
   defaultProps: {
-    size: "md",
-    variant: "line",
-    colorScheme: "blue",
+    size: 'md',
+    variant: 'line',
+    colorScheme: 'blue',
   },
   baseStyle: {
     Tab: {
-      transition: "all 0.2s",
+      transition: 'all 0.2s',
       _focus: {
         zIndex: 1,
-        boxShadow: "outline",
+        boxShadow: 'outline',
       },
     },
     TabList: {
-      display: "flex",
+      display: 'flex',
     },
     TabPanel: {
       padding: 4,
@@ -137,49 +137,49 @@ const Tabs: ComponentTheme = {
   sizes: {
     sm: {
       Tab: {
-        paddingY: "0.25rem",
-        paddingX: "1rem",
-        fontSize: "0.85rem",
+        paddingY: '0.25rem',
+        paddingX: '1rem',
+        fontSize: '0.85rem',
       },
     },
     md: {
       Tab: {
-        fontSize: "1rem",
-        paddingY: "0.5rem",
-        paddingX: "1rem",
+        fontSize: '1rem',
+        paddingY: '0.5rem',
+        paddingX: '1rem',
       },
     },
     lg: {
       Tab: {
-        fontSize: "1.15rem",
-        paddingY: "0.75rem",
-        paddingX: "1rem",
+        fontSize: '1.15rem',
+        paddingY: '0.75rem',
+        paddingX: '1rem',
       },
     },
   },
   variants: {
     line: getLineStyle,
     enclosed: getEnclosedStyle,
-    "soft-rounded": getSoftRoundedStyle,
-    "enclosed-colored": getEnclosedColoredStyle,
-    "solid-rounded": getSolidRoundedStyle,
+    'soft-rounded': getSoftRoundedStyle,
+    'enclosed-colored': getEnclosedColoredStyle,
+    'solid-rounded': getSolidRoundedStyle,
     unstyled: {},
   },
-}
+};
 
 export const TabSizes = {
-  sm: "sm",
-  md: "md",
-  lg: "lg",
-}
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+};
 
 export const TabVariants = {
-  line: "line",
-  enclosed: "enclosed",
-  "soft-rounded": "soft-rounded",
-  "enclosed-colored": "enclosed-colored",
-  "solid-rounded": "solid-rounded",
-  unstyled: "unstyled",
-}
+  line: 'line',
+  enclosed: 'enclosed',
+  'soft-rounded': 'soft-rounded',
+  'enclosed-colored': 'enclosed-colored',
+  'solid-rounded': 'solid-rounded',
+  unstyled: 'unstyled',
+};
 
-export default Tabs
+export default Tabs;

@@ -1,24 +1,24 @@
-import { ComponentTheme } from "@chakra-ui/theme-tools"
+import { ComponentTheme } from '@chakra-ui/theme-tools';
 
 const Link: ComponentTheme = {
   baseStyle: {
     transition: `all 0.15s ease-out`,
-    cursor: "pointer",
-    textDecoration: "none",
-    outline: "none",
-    color: "inherit",
+    cursor: 'pointer',
+    textDecoration: 'none',
+    outline: 'none',
+    color: 'inherit',
     _hover: {
-      textDecoration: "underline",
+      textDecoration: 'underline',
     },
     _focus: {
-      boxShadow: "outline",
+      boxShadow: 'outline',
     },
     _disabled: {
       opacity: 0.4,
-      cursor: "not-allowed",
-      textDecoration: "none",
+      cursor: 'not-allowed',
+      textDecoration: 'none',
     },
   },
-}
+};
 
-export default Link
+export default Link;

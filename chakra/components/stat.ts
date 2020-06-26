@@ -1,20 +1,20 @@
-import { ComponentTheme } from "@chakra-ui/theme-tools"
+import { ComponentTheme } from '@chakra-ui/theme-tools';
 
 const Stat: ComponentTheme = {
   defaultProps: {
-    size: "md",
+    size: 'md',
   },
   baseStyle: {
     Label: {
-      fontWeight: "medium",
+      fontWeight: 'medium',
     },
     HelpText: {
       opacity: 0.8,
       marginBottom: 2,
     },
     Number: {
-      verticalAlign: "baseline",
-      fontWeight: "semibold",
+      verticalAlign: 'baseline',
+      fontWeight: 'semibold',
     },
   },
   /**
@@ -24,20 +24,20 @@ const Stat: ComponentTheme = {
   sizes: {
     md: {
       Label: {
-        fontSize: "sm",
+        fontSize: 'sm',
       },
       HelpText: {
-        fontSize: "sm",
+        fontSize: 'sm',
       },
       Number: {
-        fontSize: "2xl",
+        fontSize: '2xl',
       },
     },
   },
-}
+};
 
 export const StatSizes = {
-  md: "md",
-}
+  md: 'md',
+};
 
-export default Stat
+export default Stat;

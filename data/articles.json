@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Carbon Fiber Camo Substance",
+    "content": "I decided to make the skin on my phone in Substance Designer and i think it turned out alright. If you like the skin you can get it from https://dbrand.com. The render was created in Marmoset Toolbag 3. Higher quality video availabe here:",
+    "image": "/images/camocarbonfiberpw.png",
+    "video": "/images/camocarbonfiber.mp4"
+  },
+  {
+    "id": 2,
+    "title": "Space Socks",
+    "content": "Yes",
+    "image": "",
+    "video": ""
+  },
+  {
+    "id": 3,
+    "title": "This Purple Hat Is Blazing Fast",
+    "content": "Yes",
+    "image": "",
+    "video": ""
+  }
+]

@@ -1,57 +1,57 @@
-import { ComponentTheme, mode } from "@chakra-ui/theme-tools"
+import { ComponentTheme, mode } from '@chakra-ui/theme-tools';
 
-function getSizeStyle(size: "sm" | "md" | "lg") {
+function getSizeStyle(size: 'sm' | 'md' | 'lg') {
   return {
     Stepper: {
-      fontSize: size === "lg" ? "14px" : "10px",
+      fontSize: size === 'lg' ? '14px' : '10px',
       _first: {
-        borderTopRightRadius: size === "lg" ? 3 : 1,
+        borderTopRightRadius: size === 'lg' ? 3 : 1,
       },
       _last: {
-        borderBottomRightRadius: size === "lg" ? 3 : 1,
-        marginTop: "-1px",
+        borderBottomRightRadius: size === 'lg' ? 3 : 1,
+        marginTop: '-1px',
         borderTopWidth: 1,
       },
     },
-  }
+  };
 }
 
 const NumberInput: ComponentTheme = {
   defaultProps: {
-    size: "md",
+    size: 'md',
   },
   baseStyle: (props) => ({
     StepperGroup: {
-      width: "24px",
-      margin: "1px",
-      position: "absolute",
-      right: "0px",
-      height: "calc(100% - 2px)",
+      width: '24px',
+      margin: '1px',
+      position: 'absolute',
+      right: '0px',
+      height: 'calc(100% - 2px)',
     },
     Stepper: {
-      borderLeft: "1px solid",
-      borderColor: mode("inherit", "whiteAlpha.300")(props),
-      color: mode("inherit", "whiteAlpha.800")(props),
+      borderLeft: '1px solid',
+      borderColor: mode('inherit', 'whiteAlpha.300')(props),
+      color: mode('inherit', 'whiteAlpha.800')(props),
       _active: {
-        bg: mode("gray.200", "whiteAlpha.300")(props),
+        bg: mode('gray.200', 'whiteAlpha.300')(props),
       },
       _disabled: {
         opacity: 0.4,
-        cursor: "not-allowed",
+        cursor: 'not-allowed',
       },
     },
   }),
   sizes: {
-    sm: getSizeStyle("sm"),
-    md: getSizeStyle("md"),
-    lg: getSizeStyle("lg"),
+    sm: getSizeStyle('sm'),
+    md: getSizeStyle('md'),
+    lg: getSizeStyle('lg'),
   },
-}
+};
 
 export const NumberInputSizes = {
-  sm: "sm",
-  md: "md",
-  lg: "lg",
-}
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+};
 
-export default NumberInput
+export default NumberInput;

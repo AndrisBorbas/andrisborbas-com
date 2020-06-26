@@ -1,25 +1,25 @@
-import { ComponentTheme } from "@chakra-ui/theme-tools"
+import { ComponentTheme } from '@chakra-ui/theme-tools';
 
 const Accordion: ComponentTheme = {
   baseStyle: {
     Item: {
-      borderTopWidth: "1px",
-      borderColor: "inherit",
+      borderTopWidth: '1px',
+      borderColor: 'inherit',
       _last: {
-        borderBottomWidth: "1px",
+        borderBottomWidth: '1px',
       },
     },
     Button: {
-      fontSize: "1rem",
+      fontSize: '1rem',
       _focus: {
-        boxShadow: "outline",
+        boxShadow: 'outline',
       },
       _hover: {
-        bg: "blackAlpha.50",
+        bg: 'blackAlpha.50',
       },
       _disabled: {
         opacity: 0.4,
-        cursor: "not-allowed",
+        cursor: 'not-allowed',
       },
       paddingX: 4,
       paddingY: 2,
@@ -30,6 +30,6 @@ const Accordion: ComponentTheme = {
       paddingBottom: 5,
     },
   },
-}
+};
 
-export default Accordion
+export default Accordion;

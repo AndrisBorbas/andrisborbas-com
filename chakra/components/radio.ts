@@ -1,24 +1,26 @@
-import Checkbox, { CheckboxSizes } from "./checkbox"
-import { ComponentTheme } from "@chakra-ui/theme-tools"
+import { ComponentTheme } from '@chakra-ui/theme-tools';
 
-const baseStyle = Checkbox.baseStyle as any
+import Checkbox, { CheckboxSizes } from './checkbox';
+
+const baseStyle = Checkbox.baseStyle as any;
 
 const Radio: ComponentTheme = {
   defaultProps: Checkbox.defaultProps,
   baseStyle: (props) => ({
     Control: {
       ...baseStyle(props).Control,
-      borderRadius: "full",
+      borderRadius: 'full',
       _checked: {
-        ...baseStyle(props).Control["_checked"],
+        // eslint-disable-next-line no-underscore-dangle
+        ...baseStyle(props).Control._checked,
         _before: {
           content: `""`,
-          display: "inline-block",
-          position: "relative",
-          width: "50%",
-          height: "50%",
-          borderRadius: "50%",
-          bg: "currentColor",
+          display: 'inline-block',
+          position: 'relative',
+          width: '50%',
+          height: '50%',
+          borderRadius: '50%',
+          bg: 'currentColor',
         },
       },
     },
@@ -33,8 +35,8 @@ const Radio: ComponentTheme = {
       },
     },
   },
-}
+};
 
-export const RadioSizes = CheckboxSizes
+export const RadioSizes = CheckboxSizes;
 
-export default Radio
+export default Radio;

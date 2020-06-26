@@ -1,9 +1,9 @@
 const zIndices = {
   hide: -1,
-  auto: "auto",
+  auto: 'auto',
   base: 0,
-}
+};
 
-export type ZIndices = typeof zIndices
+export type ZIndices = typeof zIndices;
 
-export default zIndices
+export default zIndices;

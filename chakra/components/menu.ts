@@ -1,29 +1,30 @@
-import { Props, mode, ComponentTheme, copy } from "@chakra-ui/theme-tools"
-import { SystemProps } from "@chakra-ui/system"
-import Button from "./button"
+import { SystemProps } from '@chakra-ui/system';
+import { ComponentTheme, copy, mode, Props } from '@chakra-ui/theme-tools';
+
+import Button from './button';
 
 const getMenuListStyle = (props: Props): SystemProps => {
   return {
     bg: mode(`#fff`, `gray.700`)(props),
     boxShadow: mode(`sm`, `dark-lg`)(props),
-    color: "inherit",
+    color: 'inherit',
     outline: 0,
-    minWidth: "3xs",
-    paddingY: "2",
-    zIndex: "1",
-    borderRadius: "md",
-    border: "1px solid",
-    borderColor: "inherit",
-  }
-}
+    minWidth: '3xs',
+    paddingY: '2',
+    zIndex: '1',
+    borderRadius: 'md',
+    border: '1px solid',
+    borderColor: 'inherit',
+  };
+};
 
 const getMenuItemStyle = (props: Props): SystemProps => ({
-  width: "100%",
+  width: '100%',
   outline: 0,
-  textDecoration: "none",
-  paddingY: "0.4rem",
-  paddingX: "0.8rem",
-  transition: "background 50ms ease-in 0s",
+  textDecoration: 'none',
+  paddingY: '0.4rem',
+  paddingX: '0.8rem',
+  transition: 'background 50ms ease-in 0s',
   _focus: {
     bg: mode(`gray.100`, `whiteAlpha.100`)(props),
   },
@@ -35,9 +36,9 @@ const getMenuItemStyle = (props: Props): SystemProps => ({
   },
   _disabled: {
     opacity: 0.4,
-    cursor: "not-allowed",
+    cursor: 'not-allowed',
   },
-})
+});
 
 const Menu: ComponentTheme = {
   defaultProps: Button.defaultProps,
@@ -48,8 +49,8 @@ const Menu: ComponentTheme = {
     MenuGroupTitle: {
       marginX: 4,
       marginY: 2,
-      fontWeight: "semibold",
-      fontSize: "sm",
+      fontWeight: 'semibold',
+      fontSize: 'sm',
     },
   }),
   variants: {
@@ -71,15 +72,15 @@ const Menu: ComponentTheme = {
      *   }
      * }
      */
-    ...copy(Button.variants, "MenuButton"),
+    ...copy(Button.variants, 'MenuButton'),
   },
   sizes: {
     /**
      * We're using `copy` function to copy all button sizes
      * under the key `MenuButton`.
      */
-    ...copy(Button.sizes, "MenuButton"),
+    ...copy(Button.sizes, 'MenuButton'),
   },
-}
+};
 
-export default Menu
+export default Menu;
