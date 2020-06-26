@@ -3,12 +3,16 @@ import {
   AccordionIcon,
   AccordionPanel,
   Box,
+  Button,
   Flex,
+  Heading,
+  Icon,
   Image,
   Link,
+  Text,
 } from '@chakra-ui/core';
 import { css } from '@emotion/core';
-import React, { useState } from 'react';
+import React from 'react';
 import Linkify from 'react-linkify';
 
 interface ArticleContentProps {
@@ -16,6 +20,10 @@ interface ArticleContentProps {
   contentText: string;
   imagePath: string;
   videoPath: string;
+  height: string[];
+  width: string;
+  buttonText: string;
+  buttonLink: string;
 }
 
 export default function ArticleContent({
@@ -23,20 +31,38 @@ export default function ArticleContent({
   contentText,
   imagePath,
   videoPath,
+  height,
+  width,
+  buttonText,
+  buttonLink,
 }: ArticleContentProps): JSX.Element {
-  const [state, setstate] = useState(false);
+  /*
+  function DownloadIcon() {
+    return <Icon name="donwload" />;
+  }
+  */
   return (
     <>
       <AccordionButton>
         <Box flex="1" textAlign="left">
-          {titleText}
+          <Heading size="lg">{titleText}</Heading>
         </Box>
         <AccordionIcon />
       </AccordionButton>
-      <AccordionPanel pb={4}>
+      <AccordionPanel pb={4} minH={height[0] === '' ? ['auto'] : height}>
         <Box position="relative" flexDirection="column">
           {imagePath !== '' && videoPath === '' && (
-            <Image float="right" src={imagePath} ml={4} mb={4} maxW={400} />
+            <Image
+              float="right"
+              src={imagePath}
+              ml={4}
+              mb={4}
+              // maxW={400}
+              minW={['100%', '280px']}
+              boxShadow="rgba(0, 0, 0, 0.3) 0px 0.5rem 1rem 0px, rgba(0, 0, 0, 0.3) 0px 1rem 2rem 0px"
+              borderRadius="15px"
+              w={width}
+            />
           )}
           {videoPath !== '' && (
             <Box
@@ -48,10 +74,10 @@ export default function ArticleContent({
               // eslint-disable-next-line max-len
               boxShadow="rgba(0, 0, 0, 0.3) 0px 0.5rem 1rem 0px, rgba(0, 0, 0, 0.3) 0px 1rem 2rem 0px"
               borderRadius="15px"
-              minW="280px"
+              minW={['100%', '280px']}
               maxW="575px"
               // pt="33%"
-              w="33%"
+              w={width}
               /* css={css`
                   &::before {
                     padding-top: 100%;
@@ -76,7 +102,11 @@ export default function ArticleContent({
             </Box>
           )}
           <Linkify
-            componentDecorator={(decoratedHref, decoratedText, key) => (
+            componentDecorator={(
+              decoratedHref,
+              decoratedText,
+              key,
+            ): JSX.Element => (
               <Link
                 target="blank"
                 href={decoratedHref}
@@ -87,8 +117,17 @@ export default function ArticleContent({
               </Link>
             )}
           >
-            {contentText}
+            <Text textAlign="justify">{contentText}</Text>
           </Linkify>{' '}
+          <Link href={buttonLink} target="_blank">
+            <Button
+              mt={4}
+              colorScheme="blue"
+              color="black" /* leftIcon={<DownloadIcon />} */
+            >
+              {buttonText}
+            </Button>
+          </Link>
         </Box>
       </AccordionPanel>
     </>

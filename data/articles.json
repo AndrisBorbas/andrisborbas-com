@@ -1,23 +1,57 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "title": "Carbon Fiber Camo Substance",
     "content": "I decided to make the skin on my phone in Substance Designer and i think it turned out alright. If you like the skin you can get it from https://dbrand.com. The render was created in Marmoset Toolbag 3. Higher quality video availabe here:",
     "image": "/images/camocarbonfiberpw.png",
-    "video": "/images/camocarbonfiber.mp4"
+    "video": "/images/camocarbonfiber.mp4",
+    "minHeight": ["310px", "310px", "310px", "330px", "400px"],
+    "imageWidth": "33%",
+    "buttonText": "Download HQ",
+    "buttonLink": "https://www.andrisborbas.com/static/images/camocarbonfiberhq.mp4"
+  },
+  {
+    "id": 1,
+    "title": "Desert Bedrock Substance",
+    "content": "I followed Daniel Thiger's excellent tutorial (https://gumroad.com/l/detebedrocktut) on how to create a Desert Bedrock material in Substance Designer. I learned a lot from the video and it helped me create other materials as well. The render was created in Marmoset Toolbag 3. Higher quality video availabe here:",
+    "image": "/images/desertbedrockpw.png",
+    "video": "/images/desertbedrock.mp4",
+    "minHeight": ["310px", "310px", "310px", "330px", "400px"],
+    "imageWidth": "33%",
+    "buttonText": "Download HQ",
+    "buttonLink": "https://www.andrisborbas.com/static/images/desertbedrockhq.mp4"
   },
   {
     "id": 2,
-    "title": "Space Socks",
-    "content": "Yes",
-    "image": "",
-    "video": ""
+    "title": "BME Neptun Dark Skin",
+    "content": "This is a User CSS dark skin for BME Neptun. It can be installed with stylus. Any issues can be reported at https://github.com/AndrisBorbas/DarkSkins/issues.",
+    "image": "/images/neptundark.png",
+    "video": "",
+    "minHeight": ["230px", "150px", "200px", "260px", "300px"],
+    "imageWidth": "50%",
+    "buttonText": "Install with stylus",
+    "buttonLink": "https://raw.githubusercontent.com/AndrisBorbas/DarkSkins/master/neptun/neptun-dark.user.css"
   },
   {
     "id": 3,
-    "title": "This Purple Hat Is Blazing Fast",
-    "content": "Yes",
+    "title": "UE4 Tessellation function",
+    "content": "This is a UE4 material function that can be used to add tessellation to any material. The height of the tessellation can be controlled with a scalar. The function has parameters inside that can be controlled in a material instance. \nThe maxTessFactor is 15 by default IN ENGINE because it gets slower if you go higher on AMD cards. You can change the maxTessFactor by editing the FlatTessellation.ush and PNTriangles.ush files and then recompiling EVERY engine shader. \nvThe height is multplied by the tessellation factor, so the less you tessellate, the heightmap gets applied less. This also works with landscapes if you use Worldposition-XY coords instead of LandscapeLayerCoords.",
+    "image": "/images/tessellation.png",
+    "video": "",
+    "minHeight": ["230px", "150px", "200px", "100px", "350px"],
+    "imageWidth": "50%",
+    "buttonText": "Copyable Blueprint",
+    "buttonLink": "https://blueprintue.com/blueprint/4f3kvi9v/"
+  },
+  {
+    "id": 4,
+    "title": "Dropdown Folders Rainmeter Skin",
+    "content": "I created this Rainmeter skin a while ago. I was inspired by my obnoxious desktop and my relatively clean iOS springboard(homescreen). So i decided to create this ios folder like skin that you can fill with anything and have it expand in 'any' direction. Compiled Rainmeter skin availabe here:",
     "image": "",
-    "video": ""
+    "video": "/images/folder.mp4",
+    "minHeight": ["230px", "150px", "200px", "200px", "240px"],
+    "imageWidth": "33%",
+    "buttonText": "Download",
+    "buttonLink": "https://github.com/AndrisBorbas/ShortcutsFolder/releases"
   }
 ]

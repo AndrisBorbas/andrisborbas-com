@@ -14,7 +14,7 @@ export default function IndexPage(): JSX.Element {
         Home Page
       </Heading>
       <Accordion
-        defaultIndex={[1, 3]}
+        defaultIndex={[0, 1]}
         allowMultiple
         bg="hsla(220, 26%, 35%, 0.1875) !important"
         css={css`
@@ -39,6 +39,10 @@ export default function IndexPage(): JSX.Element {
                 contentText={article.content}
                 imagePath={article.image}
                 videoPath={article.video}
+                height={article.minHeight}
+                width={article.imageWidth}
+                buttonText={article.buttonText}
+                buttonLink={article.buttonLink}
               />
             </AccordionItem>
           );
