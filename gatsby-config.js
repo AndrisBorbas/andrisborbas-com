@@ -9,6 +9,13 @@ module.exports = {
     'gatsby-plugin-chakra-ui',
     'gatsby-plugin-emotion',
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `staticImages`,
+        path: `${__dirname}/static/images/`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         ...siteMetadata,

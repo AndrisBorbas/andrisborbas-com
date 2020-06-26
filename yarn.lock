@@ -1061,7 +1061,7 @@
   dependencies:
     "@chakra-ui/utils" "^1.0.0-next.2"
 
-"@chakra-ui/button@^1.0.0-next.1", "@chakra-ui/button@^1.0.0-next.2":
+"@chakra-ui/button@^1.0.0-next.2":
   version "1.0.0-next.2"
   resolved "https://registry.yarnpkg.com/@chakra-ui/button/-/button-1.0.0-next.2.tgz#086928fd9d574ab31301ed43cec0a5fa4391b9f9"
   integrity sha512-ebvBYAa5l+1qnJvdUe3NGEdDAe66G1PAFrBxj6+S7zaG7ssRKmcnsF3BsFFsK6SG6LJKUPot6E7AzL7EEGC7Cg==
@@ -1245,7 +1245,7 @@
   dependencies:
     "@chakra-ui/utils" "^1.0.0-next.2"
 
-"@chakra-ui/image@^1.0.0-next.1", "@chakra-ui/image@^1.0.0-next.2":
+"@chakra-ui/image@^1.0.0-next.2":
   version "1.0.0-next.2"
   resolved "https://registry.yarnpkg.com/@chakra-ui/image/-/image-1.0.0-next.2.tgz#cee3cbeadfca40d5da21cf859022ad87c371702e"
   integrity sha512-CJQoe6o91OCE/Rgftbd35BryramBgVrih9kkEcbcjbx8qBOtovwxoUzMDa6WnK5afQxJI1KXrA9IfgHwGAd7SA==
@@ -1283,7 +1283,7 @@
     "@chakra-ui/hooks" "^1.0.0-next.2"
     "@chakra-ui/utils" "^1.0.0-next.2"
 
-"@chakra-ui/menu@^1.0.0-next.1", "@chakra-ui/menu@^1.0.0-next.2":
+"@chakra-ui/menu@^1.0.0-next.2":
   version "1.0.0-next.2"
   resolved "https://registry.yarnpkg.com/@chakra-ui/menu/-/menu-1.0.0-next.2.tgz#bc737bb4eda7941ed7fbc746ef0734ea86d5c3b0"
   integrity sha512-GKd+n09SlY9AyE/W84Qy757sJV1BrPbwshujpi+0xFips4mRbSaMB59jLnocgg4LrEaQl1/rZyO3jJDbxp0xBw==
@@ -1418,7 +1418,7 @@
     "@chakra-ui/utils" "^1.0.0-next.2"
     "@chakra-ui/visually-hidden" "^1.0.0-next.2"
 
-"@chakra-ui/switch@^1.0.0-next.1", "@chakra-ui/switch@^1.0.0-next.2":
+"@chakra-ui/switch@^1.0.0-next.2":
   version "1.0.0-next.2"
   resolved "https://registry.yarnpkg.com/@chakra-ui/switch/-/switch-1.0.0-next.2.tgz#0d46e2c55564b5ecb86041f842c8205e1ce0506e"
   integrity sha512-uKE3kJZn/FNVMKiLjef1iL+Ch+ffI5AN7mbPynu/ho1EnjAFyb2z9b1LF1O4n+vyKIOwSqdjUpseXo11dOGuMA==
@@ -1441,7 +1441,7 @@
     "@types/hoist-non-react-statics" "3.3.1"
     hoist-non-react-statics "3.3.2"
 
-"@chakra-ui/tabs@^1.0.0-next.1", "@chakra-ui/tabs@^1.0.0-next.2":
+"@chakra-ui/tabs@^1.0.0-next.2":
   version "1.0.0-next.2"
   resolved "https://registry.yarnpkg.com/@chakra-ui/tabs/-/tabs-1.0.0-next.2.tgz#3e0a56399e5a5f837420b821bd2d0302f4e09f6d"
   integrity sha512-pt7SgHy0N4X0fP5UZG1ewjGvivs1ko2C6X7O8oImpew64OCJpnMVqxpQf/Yy3CPBXHp+NXt7JYpNHQLVOQF24g==
@@ -1476,7 +1476,7 @@
     "@types/tinycolor2" "1.4.2"
     tinycolor2 "1.4.1"
 
-"@chakra-ui/theme@^1.0.0-next.1":
+"@chakra-ui/theme@^1.0.0-next.2":
   version "1.0.0-next.2"
   resolved "https://registry.yarnpkg.com/@chakra-ui/theme/-/theme-1.0.0-next.2.tgz#97feabb35c8c4994475c0c2e7dac5fb803ecf7ac"
   integrity sha512-ZAhat2JJA+QQ/QIQgJlIN+ChAXq6QJEIUP8bagxuGoZjIiXdqbiYUPwgqRXfKrExKVZfwTmXMI4hkEfol5hR3A==
@@ -1496,7 +1496,7 @@
     "@reach/alert" "0.10.3"
     "@reach/rect" "0.10.4"
 
-"@chakra-ui/tooltip@^1.0.0-next.1", "@chakra-ui/tooltip@^1.0.0-next.2":
+"@chakra-ui/tooltip@^1.0.0-next.2":
   version "1.0.0-next.2"
   resolved "https://registry.yarnpkg.com/@chakra-ui/tooltip/-/tooltip-1.0.0-next.2.tgz#31a86ce3f00c1f33a5dc9ec3eda29dff036f489e"
   integrity sha512-8Qmn7DbgfCUr2U7Qd4Y12lar83hOf87ju/fQztHiquQePR1ASG4+RTFzSmWjt8l00cxTXyQfROzlwS0sFLuNcg==
@@ -7260,6 +7260,11 @@ file-loader@^1.1.11:
     loader-utils "^1.0.2"
     schema-utils "^0.4.5"
 
+file-type@^12.4.2:
+  version "12.4.2"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-12.4.2.tgz#a344ea5664a1d01447ee7fb1b635f72feb6169d9"
+  integrity sha512-UssQP5ZgIOKelfsaB5CuGAL+Y+q7EmONuiwF3N5HAH0t27rvrttgi6Ra9k/+DVaY9UF6+ybxu5pOXLUdA8N7Vg==
+
 file-type@^3.6.0:
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/file-type/-/file-type-3.9.0.tgz#257a078384d1db8087bc449d107d52a52672b9e9"
@@ -7779,6 +7784,27 @@ gatsby-recipes@^0.1.43:
     unist-util-visit "^2.0.2"
     urql "^1.9.8"
     ws "^7.3.0"
+    xstate "^4.10.0"
+
+gatsby-source-filesystem@^2.3.14:
+  version "2.3.14"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.14.tgz#bd89e91816589b2dd961dbd03f5e3ed2a286e32f"
+  integrity sha512-AUnSikwa8+bW0DFWOV1Dq8ZUNxCnEGmx7uxxutLTolHSMhFct2cpxwaXX5ITtjqb9KgfcQ+y0EbKhzXLWpmOzg==
+  dependencies:
+    "@babel/runtime" "^7.10.3"
+    better-queue "^3.8.10"
+    bluebird "^3.7.2"
+    chokidar "3.4.0"
+    file-type "^12.4.2"
+    fs-extra "^8.1.0"
+    gatsby-core-utils "^1.3.8"
+    got "^9.6.0"
+    md5-file "^3.2.3"
+    mime "^2.4.6"
+    pretty-bytes "^5.3.0"
+    progress "^2.0.3"
+    read-chunk "^3.2.0"
+    valid-url "^1.0.9"
     xstate "^4.10.0"
 
 gatsby-telemetry@^1.3.14:
@@ -12956,7 +12982,7 @@ prettier@^2.0.5:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.0.5.tgz#d6d56282455243f2f92cc1716692c08aa31522d4"
   integrity sha512-7PtVymN48hGcO4fGjybyBSIWDsLU4H4XlvOHfq91pz9kkGlonzwTfYkaIEwiRg/dAJF9YlbsduBAgtYLi+8cFg==
 
-pretty-bytes@^5.1.0, pretty-bytes@^5.2.0:
+pretty-bytes@^5.1.0, pretty-bytes@^5.2.0, pretty-bytes@^5.3.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.3.0.tgz#f2849e27db79fb4d6cfe24764fc4134f165989f2"
   integrity sha512-hjGrh+P926p4R4WbaB6OckyRtO0F0/lQBiT+0gnxjV+5kjPBrfVBFCsCLbMqVQeydvIoouYTCmmEURiH3R1Bdg==
@@ -16230,7 +16256,7 @@ v8-to-istanbul@^4.1.3:
     convert-source-map "^1.6.0"
     source-map "^0.7.3"
 
-valid-url@1.0.9:
+valid-url@1.0.9, valid-url@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/valid-url/-/valid-url-1.0.9.tgz#1c14479b40f1397a75782f115e4086447433a200"
   integrity sha1-HBRHm0DxOXp1eC8RXkCGRHQzogA=

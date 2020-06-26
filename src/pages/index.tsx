@@ -1,6 +1,7 @@
 import { Accordion, AccordionItem } from '@chakra-ui/accordion';
 import { Box, Heading } from '@chakra-ui/core';
 import { css } from '@emotion/core';
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 
 import articles from '../../data/articles.json';
@@ -8,6 +9,18 @@ import ArticleContent from '../components/accordion/ArticleContent';
 import { Layout } from '../components/Layout';
 
 export default function IndexPage(): JSX.Element {
+  const data = useStaticQuery(graphql`
+    {
+      allFile(filter: { extension: { eq: "mp4" } }) {
+        edges {
+          node {
+            publicURL
+            name
+          }
+        }
+      }
+    }
+  `);
   return (
     <Layout>
       <Heading as="h1" size="2xl" mb={8}>
@@ -32,6 +45,10 @@ export default function IndexPage(): JSX.Element {
         `}
       >
         {articles.map((article) => {
+          const link = data.allFile.edges.find(
+            (file: { node: { name: string } }) =>
+              file.node.name === article.fileName,
+          );
           return (
             <AccordionItem key={article.id}>
               <ArticleContent
@@ -42,7 +59,11 @@ export default function IndexPage(): JSX.Element {
                 height={article.minHeight}
                 width={article.imageWidth}
                 buttonText={article.buttonText}
-                buttonLink={article.buttonLink}
+                buttonLink={
+                  article.buttonLink === ''
+                    ? link.node.publicURL
+                    : article.buttonLink
+                }
               />
             </AccordionItem>
           );

@@ -8,7 +8,8 @@
     "minHeight": ["310px", "310px", "310px", "330px", "400px"],
     "imageWidth": "33%",
     "buttonText": "Download HQ",
-    "buttonLink": "#/static/images/camocarbonfiberhq.mp4"
+    "buttonLink": "",
+    "fileName": "camocarbonfiberhq"
   },
   {
     "id": 1,
@@ -19,7 +20,8 @@
     "minHeight": ["310px", "310px", "310px", "330px", "400px"],
     "imageWidth": "33%",
     "buttonText": "Download HQ",
-    "buttonLink": "#/static/images/desertbedrockhq.mp4"
+    "buttonLink": "",
+    "fileName": "desertbedrockhq"
   },
   {
     "id": 2,
@@ -30,7 +32,8 @@
     "minHeight": ["230px", "150px", "200px", "260px", "300px"],
     "imageWidth": "50%",
     "buttonText": "Install with stylus",
-    "buttonLink": "https://raw.githubusercontent.com/AndrisBorbas/DarkSkins/master/neptun/neptun-dark.user.css"
+    "buttonLink": "https://raw.githubusercontent.com/AndrisBorbas/DarkSkins/master/neptun/neptun-dark.user.css",
+    "fileName": ""
   },
   {
     "id": 3,
@@ -41,7 +44,8 @@
     "minHeight": ["230px", "150px", "200px", "100px", "350px"],
     "imageWidth": "50%",
     "buttonText": "Copyable Blueprint",
-    "buttonLink": "https://blueprintue.com/blueprint/4f3kvi9v/"
+    "buttonLink": "https://blueprintue.com/blueprint/4f3kvi9v/",
+    "fileName": ""
   },
   {
     "id": 4,
@@ -52,6 +56,7 @@
     "minHeight": ["230px", "150px", "200px", "200px", "240px"],
     "imageWidth": "33%",
     "buttonText": "Download",
-    "buttonLink": "https://github.com/AndrisBorbas/ShortcutsFolder/releases"
+    "buttonLink": "https://github.com/AndrisBorbas/ShortcutsFolder/releases",
+    "fileName": ""
   }
 ]
