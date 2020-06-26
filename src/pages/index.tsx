@@ -1,16 +1,11 @@
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-} from '@chakra-ui/accordion';
+import { Accordion, AccordionItem } from '@chakra-ui/accordion';
 import { Box, Heading } from '@chakra-ui/core';
 import { css } from '@emotion/core';
 import React from 'react';
 
+import articles from '../../data/articles.json';
+import ArticleContent from '../components/accordion/ArticleContent';
 import { Layout } from '../components/Layout';
-import Stripes from '../components/Stripes';
 
 export default function IndexPage(): JSX.Element {
   return (
@@ -36,49 +31,18 @@ export default function IndexPage(): JSX.Element {
           }
         `}
       >
-        <AccordionItem>
-          <AccordionButton>
-            <Box flex="1" textAlign="left">
-              Section 1 title
-            </Box>
-            <AccordionIcon />
-          </AccordionButton>
-          <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </AccordionPanel>
-        </AccordionItem>
-        <AccordionItem>
-          <AccordionButton>
-            <Box flex="1" textAlign="left">
-              Section 1 title
-            </Box>
-            <AccordionIcon />
-          </AccordionButton>
-          <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat.
-          </AccordionPanel>
-        </AccordionItem>
+        {articles.map((article) => {
+          return (
+            <AccordionItem key={article.id}>
+              <ArticleContent
+                titleText={article.title}
+                contentText={article.content}
+                imagePath={article.image}
+                videoPath={article.video}
+              />
+            </AccordionItem>
+          );
+        })}
       </Accordion>
       <Box minH={1000} />
     </Layout>
