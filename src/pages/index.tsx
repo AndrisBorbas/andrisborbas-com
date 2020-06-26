@@ -48,7 +48,6 @@ export default function IndexPage(): JSX.Element {
           );
         })}
       </Accordion>
-      <Box minH={1000} />
     </Layout>
   );
 }

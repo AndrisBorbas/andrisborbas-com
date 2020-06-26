@@ -60,7 +60,9 @@ export default function Navbar(): JSX.Element {
           </Heading>
         </NavLink>
         <Menu>
-          <MenuButton as={Button} rightIcon={<Icon name="chevron-down" />}>
+          <MenuButton
+            as={Button} /* rightIcon={<Icon name="chevron-down" />} */
+          >
             Projects
           </MenuButton>
           <MenuList>
@@ -72,7 +74,6 @@ export default function Navbar(): JSX.Element {
                 Factorio Ratio Counter
               </NavLink>
             </MenuItem>
-            <MenuDivider />
           </MenuList>
         </Menu>
       </Stack>
