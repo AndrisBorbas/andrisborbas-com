@@ -11,7 +11,7 @@ import { Layout } from '../components/Layout';
 export default function IndexPage(): JSX.Element {
   const data = useStaticQuery(graphql`
     {
-      allFile(filter: { extension: { eq: "mp4" } }) {
+      allFile(filter: { extension: { in: ["mp4", "exr"] } }) {
         edges {
           node {
             publicURL
