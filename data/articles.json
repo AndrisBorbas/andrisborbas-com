@@ -1,6 +1,7 @@
 [
   {
     "id": 0,
+    "date": "2020-06-26",
     "title": "Sleeping Beauty",
     "content": "I saw a crop of this concept art (https://www.behance.net/gallery/94021209/Winter-Sleep) and it looked so cool, that I decided to recreate it. I used Gaea to create the landscape and then textured it in World Creator. You can download a 4K heightmap via the button below.",
     "image": "/images/Beaut-final.webp",
@@ -13,6 +14,20 @@
   },
   {
     "id": 1,
+    "date": "2020-06-27",
+    "title": "Concrete Walkway Substance",
+    "content": "For some unknown reason I always wanted to create this kind of concrete walkway with the bumps in it, so finally I did. Rendered in Marmoset Toolbag 3.",
+    "image": "/images/Concrete1.webp",
+    "video": "/images/Concrete1.mp4",
+    "minHeight": ["310px", "310px", "310px", "330px", "400px"],
+    "imageWidth": "33%",
+    "buttonText": "",
+    "buttonLink": "",
+    "fileName": ""
+  },
+  {
+    "id": 2,
+    "date": "2019-04-09",
     "title": "Carbon Fiber Camo Substance",
     "content": "I decided to make the skin on my phone in Substance Designer and i think it turned out alright. If you like the skin you can get it from https://dbrand.com. The render was created in Marmoset Toolbag 3. Higher quality video availabe here:",
     "image": "/images/camocarbonfiberpw.webp",
@@ -24,7 +39,8 @@
     "fileName": "camocarbonfiberhq"
   },
   {
-    "id": 2,
+    "id": 3,
+    "date": "2019-03-27",
     "title": "Desert Bedrock Substance",
     "content": "I followed Daniel Thiger's excellent tutorial (https://gumroad.com/l/detebedrocktut) on how to create a Desert Bedrock material in Substance Designer. I learned a lot from the video and it helped me create other materials as well. The render was created in Marmoset Toolbag 3. Higher quality video availabe here:",
     "image": "/images/desertbedrockpw.webp",
@@ -36,7 +52,8 @@
     "fileName": "desertbedrockhq"
   },
   {
-    "id": 3,
+    "id": 4,
+    "date": "2019-05-27",
     "title": "BME Neptun Dark Skin",
     "content": "This is a User CSS dark skin for BME Neptun. It can be installed with stylus. Any issues can be reported at https://github.com/AndrisBorbas/DarkSkins/issues.",
     "image": "/images/neptundark.png",
@@ -48,7 +65,8 @@
     "fileName": ""
   },
   {
-    "id": 4,
+    "id": 5,
+    "date": "2019-03-19",
     "title": "UE4 Tessellation function",
     "content": "This is a UE4 material function that can be used to add tessellation to any material. The height of the tessellation can be controlled with a scalar. The function has parameters inside that can be controlled in a material instance. \nThe maxTessFactor is 15 by default IN ENGINE because it gets slower if you go higher on AMD cards. You can change the maxTessFactor by editing the FlatTessellation.ush and PNTriangles.ush files and then recompiling EVERY engine shader. \nvThe height is multplied by the tessellation factor, so the less you tessellate, the heightmap gets applied less. This also works with landscapes if you use Worldposition-XY coords instead of LandscapeLayerCoords.",
     "image": "/images/tessellation.png",
@@ -60,7 +78,8 @@
     "fileName": ""
   },
   {
-    "id": 5,
+    "id": 6,
+    "date": "2019-04-11",
     "title": "Dropdown Folders Rainmeter Skin",
     "content": "I created this Rainmeter skin a while ago. I was inspired by my obnoxious desktop and my relatively clean iOS springboard(homescreen). So i decided to create this ios folder like skin that you can fill with anything and have it expand in 'any' direction. Compiled Rainmeter skin availabe here:",
     "image": "",
