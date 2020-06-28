@@ -16,6 +16,7 @@ import React from 'react';
 import Linkify from 'react-linkify';
 
 interface ArticleContentProps {
+  date: string;
   titleText: string;
   contentText: string;
   imagePath: string;
@@ -27,6 +28,7 @@ interface ArticleContentProps {
 }
 
 export default function ArticleContent({
+  date,
   titleText,
   contentText,
   imagePath,
@@ -50,7 +52,7 @@ export default function ArticleContent({
         <AccordionIcon />
       </AccordionButton>
       <AccordionPanel pb={4} minH={height[0] === '' ? ['auto'] : height}>
-        <Box position="relative" flexDirection="column">
+        <Box flexDirection="column">
           {imagePath !== '' && videoPath === '' && (
             <Image
               float="right"
@@ -101,6 +103,17 @@ export default function ArticleContent({
               />
             </Box>
           )}
+          <Text
+            pb={2}
+            fontSize="sm"
+            color="gray.500"
+            fontWeight="light"
+            position="absolute"
+            float="left"
+            bottom={0}
+          >
+            {date}
+          </Text>
           <Linkify
             componentDecorator={(
               decoratedHref,
@@ -117,17 +130,21 @@ export default function ArticleContent({
               </Link>
             )}
           >
-            <Text textAlign="justify">{contentText}</Text>
+            <Text textAlign="justify" mb={4}>
+              {contentText}
+            </Text>
           </Linkify>{' '}
-          <Link href={buttonLink} target="_blank">
-            <Button
-              mt={4}
-              colorScheme="blue"
-              color="black" /* leftIcon={<DownloadIcon />} */
-            >
-              {buttonText}
-            </Button>
-          </Link>
+          {buttonLink && (
+            <Link href={buttonLink} target="_blank">
+              <Button
+                mb={6}
+                colorScheme="blue"
+                color="black" /* leftIcon={<DownloadIcon />} */
+              >
+                {buttonText}
+              </Button>
+            </Link>
+          )}
         </Box>
       </AccordionPanel>
     </>

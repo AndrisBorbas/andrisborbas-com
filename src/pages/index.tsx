@@ -11,7 +11,7 @@ import { Layout } from '../components/Layout';
 export default function IndexPage(): JSX.Element {
   const data = useStaticQuery(graphql`
     {
-      allFile(filter: { extension: { eq: "mp4" } }) {
+      allFile(filter: { extension: { in: ["mp4", "exr"] } }) {
         edges {
           node {
             publicURL
@@ -27,7 +27,7 @@ export default function IndexPage(): JSX.Element {
         Home Page
       </Heading>
       <Accordion
-        defaultIndex={[0, 1]}
+        defaultIndex={[0, 1, 2]}
         allowMultiple
         bg="hsla(220, 26%, 35%, 0.1875) !important"
         css={css`
@@ -52,6 +52,7 @@ export default function IndexPage(): JSX.Element {
           return (
             <AccordionItem key={article.id}>
               <ArticleContent
+                date={article.date}
                 titleText={article.title}
                 contentText={article.content}
                 imagePath={article.image}
@@ -59,11 +60,7 @@ export default function IndexPage(): JSX.Element {
                 height={article.minHeight}
                 width={article.imageWidth}
                 buttonText={article.buttonText}
-                buttonLink={
-                  article.buttonLink === ''
-                    ? link.node.publicURL
-                    : article.buttonLink
-                }
+                buttonLink={link ? link.node.publicURL : article.buttonLink}
               />
             </AccordionItem>
           );

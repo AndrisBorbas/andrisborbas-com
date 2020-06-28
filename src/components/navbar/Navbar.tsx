@@ -46,7 +46,13 @@ export default function Navbar(): JSX.Element {
       `}
     >
       <Stack spacing={4} direction="row" align="center">
-        <NavLink href="/">
+        <NavLink
+          href="#"
+          onClick={(): void => {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+          }}
+        >
           <Image src={favicon} w="30px" borderRadius="5px" />
         </NavLink>
         <NavLink href="/">
