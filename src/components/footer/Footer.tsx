@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from '@chakra-ui/core';
+import { Box, Flex, Grid, Heading, Text } from '@chakra-ui/core';
 import { css } from '@emotion/core';
 import React from 'react';
 
@@ -17,8 +17,21 @@ export default function Footer() {
       mt={8}
       zIndex={1}
     >
-      <Box maxW={['100%', '540px', '720px', '960px', '1140px']} mx="auto">
-        <Text float="right">Copyright © 2020</Text>
+      <Box
+        maxW={['100%', '540px', '720px', '960px', '1140px']}
+        h="100%"
+        mx="auto"
+        my="auto"
+      >
+        <Text pb={2} my="auto">
+          Built with ❤, Gatsby and Chakra-UI 1.0 in{' '}
+          <span role="img" aria-label="HU" aria-labelledby="HU">
+            🇭🇺
+          </span>
+          <Text as="span" float="right" display={['none', 'inherit']}>
+            Copyright © 2020
+          </Text>
+        </Text>
       </Box>
     </Box>
   );
