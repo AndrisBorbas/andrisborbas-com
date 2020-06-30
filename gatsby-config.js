@@ -1,6 +1,7 @@
 const siteMetadata = {
   name: "Andris Borbas's personal site",
   description: "Andris Borbas's personal site.",
+  siteUrl: 'https://andrisborbas.com',
 };
 
 module.exports = {
@@ -28,6 +29,14 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://andrisborbas.com',
+        sitemap: '',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     'gatsby-plugin-typescript',
   ],
 };
