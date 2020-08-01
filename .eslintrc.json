@@ -23,6 +23,7 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
+    //"createDefaultProgram": true
   },
   "rules": {
     "prettier/prettier": "error",
@@ -38,7 +39,8 @@
       "warn",
       {
         "tabWidth": 2,
-        "comments": 100
+        "comments": 100,
+        "ignoreUrls": true
       }
     ],
     "simple-import-sort/sort": "error",

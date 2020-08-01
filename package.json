@@ -8,14 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "@chakra-ui/accordion": "^1.0.0-rc.0",
     "@chakra-ui/core": "^1.0.0-rc.0",
     "@chakra-ui/theme": "^1.0.0-rc.0",
+    "@emotion/core": "^10.0.28",
     "@types/react": "^16.9.43",
     "@types/react-helmet": "^6.0.0",
+    "contentful": "^7.14.6",
     "next": "9.5.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "^6.1.0",
+    "react-markdown": "^4.3.1",
     "typescript": "^3.9.7"
   },
   "devDependencies": {
