@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "contentful-typescript-codegen": "contentful-typescript-codegen --output src/@types/generated/contentful.d.ts"
   },
   "dependencies": {
     "@chakra-ui/accordion": "^1.0.0-rc.0",
@@ -26,6 +27,9 @@
     "@types/node": "^14.0.27",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "@typescript-eslint/parser": "^3.7.1",
+    "contentful-management": "^6.0.3",
+    "contentful-typescript-codegen": "^3.2.1",
+    "dotenv": "^8.2.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-typescript": "^9.0.0",

@@ -46,7 +46,7 @@ export default function PostPreview({
         <AccordionIcon />
       </AccordionButton>
       <AccordionPanel pb={4}>
-        <Box flexDirection="column">
+        <Box flexDirection="column" position="relative">
           <Text
             pb={2}
             fontSize="sm"
@@ -58,8 +58,9 @@ export default function PostPreview({
           >
             {date}
           </Text>
-
-          <ReactMarkdown source={contentText} renderers={renderers} />
+          <Box pb={12}>
+            <ReactMarkdown source={contentText} renderers={renderers} />
+          </Box>
         </Box>
       </AccordionPanel>
     </>

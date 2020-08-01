@@ -6,14 +6,13 @@ import React, { useEffect, useState } from 'react';
 
 import PostPreview from '../components/accordion/PostPreview';
 import { Layout } from '../components/Layout';
-import Post from '../components/Post';
 
 const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
 });
 
-function HomePage() {
+function HomePage(): JSX.Element {
   async function fetchBlogPosts() {
     const entries = await client.getEntries({ content_type: 'blogPost' });
     return entries.items;
