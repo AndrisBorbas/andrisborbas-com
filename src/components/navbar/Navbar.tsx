@@ -52,7 +52,7 @@ export default function Navbar(): JSX.Element {
             document.documentElement.scrollTop = 0;
           }}
         >
-          <Image src="/favicon.png" w="30px" borderRadius="5px" />
+          <Image src="/favicon.png" alt="favicon" w="30px" borderRadius="5px" />
         </NavLink>
         <NavLink href="/">
           <Heading as="h3" size="sm">

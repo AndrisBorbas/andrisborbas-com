@@ -1,9 +1,10 @@
 import { Accordion, AccordionItem, Heading } from '@chakra-ui/core';
 import { css } from '@emotion/core';
-import { createClient } from 'contentful';
+import { createClient, Entry } from 'contentful';
 import Head from 'next/head';
 import React, { useEffect, useState } from 'react';
 
+import { IBlogPost, IBlogPostFields } from '../@types/generated/contentful';
 import PostPreview from '../components/accordion/PostPreview';
 import { Layout } from '../components/Layout';
 
@@ -14,17 +15,20 @@ const client = createClient({
 
 function HomePage(): JSX.Element {
   async function fetchBlogPosts() {
-    const entries = await client.getEntries({ content_type: 'blogPost' });
+    const entries = await client.getEntries<IBlogPostFields>({
+      content_type: 'blogPost',
+    });
+    console.log(entries.items);
     return entries.items;
   }
 
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<IBlogPost[]>([]);
 
   useEffect(() => {
     async function getPosts() {
       const allPosts = await fetchBlogPosts();
-      setPosts([...allPosts]);
       console.log(allPosts);
+      setPosts([...allPosts]);
     }
     getPosts();
   }, []);
@@ -61,7 +65,7 @@ function HomePage(): JSX.Element {
               <PostPreview
                 date={post.fields.date}
                 titleText={post.fields.title}
-                contentText={post.fields.previewContent}
+                previewText={post.fields.previewContent}
               />
             </AccordionItem>
           );

@@ -12,6 +12,7 @@
     "@chakra-ui/accordion": "^1.0.0-rc.0",
     "@chakra-ui/core": "^1.0.0-rc.0",
     "@chakra-ui/theme": "^1.0.0-rc.0",
+    "@contentful/rich-text-types": "^14.1.1",
     "@emotion/core": "^10.0.28",
     "@types/react": "^16.9.43",
     "@types/react-helmet": "^6.0.0",

@@ -19,13 +19,13 @@ import ReactMarkdown from 'react-markdown';
 interface ArticleContentProps {
   date: string;
   titleText: string;
-  contentText: string;
+  previewText: string;
 }
 
 export default function PostPreview({
   date,
   titleText,
-  contentText,
+  previewText,
 }: ArticleContentProps): JSX.Element {
   function Link({ href, children, ...restProps }: LinkProps) {
     return (
@@ -36,6 +36,7 @@ export default function PostPreview({
   }
   const renderers = {
     link: Link,
+    root: Text,
   };
   return (
     <>
@@ -59,7 +60,7 @@ export default function PostPreview({
             {date}
           </Text>
           <Box pb={12}>
-            <ReactMarkdown source={contentText} renderers={renderers} />
+            <ReactMarkdown source={previewText} renderers={renderers} />
           </Box>
         </Box>
       </AccordionPanel>

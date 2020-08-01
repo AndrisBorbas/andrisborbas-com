@@ -32,7 +32,7 @@ export interface IBlogPost extends Entry<IBlogPostFields> {
     locale: string;
     contentType: {
       sys: {
-        id: 'blogPost';
+        id: 'blogPost' | string;
         linkType: 'ContentType';
         type: 'Link';
       };

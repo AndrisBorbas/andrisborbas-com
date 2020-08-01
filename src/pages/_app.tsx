@@ -2,6 +2,7 @@ import { ChakraProvider, CSSReset } from '@chakra-ui/core';
 import theme from '@chakra-ui/theme';
 import type { AppProps } from 'next/app';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const customTheme = {
@@ -12,10 +13,15 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     },
   };
   return (
-    <ChakraProvider theme={customTheme}>
-      <CSSReset />
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <>
+      <Helmet>
+        <link rel="preconnect" href="https://cdn.contentful.com" />
+      </Helmet>
+      <ChakraProvider theme={customTheme}>
+        <CSSReset />
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </>
   );
 }
 

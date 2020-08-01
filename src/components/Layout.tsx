@@ -37,6 +37,7 @@ export function Layout({ children }: LayoutProps): JSX.Element {
         >
           {children}
         </Box>
+
         <Footer />
       </Box>
     </React.StrictMode>
