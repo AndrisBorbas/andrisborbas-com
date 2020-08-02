@@ -1,12 +1,13 @@
-import { Accordion, AccordionItem, Heading } from '@chakra-ui/core';
+import { Accordion, AccordionItem, Heading, Skeleton } from '@chakra-ui/core';
 import { css } from '@emotion/core';
 import { createClient, Entry } from 'contentful';
 import Head from 'next/head';
-import React, { useEffect, useState } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
 
 import { IBlogPost, IBlogPostFields } from '../@types/generated/contentful';
-import PostPreview from '../components/accordion/PostPreview';
 import { Layout } from '../components/Layout';
+
+const PostPreview = lazy(() => import('../components/accordion/PostPreview'));
 
 const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
@@ -18,20 +19,31 @@ function HomePage(): JSX.Element {
     const entries = await client.getEntries<IBlogPostFields>({
       content_type: 'blogPost',
     });
-    console.log(entries.items);
     return entries.items;
   }
 
   const [posts, setPosts] = useState<IBlogPost[]>([]);
 
+  function orderPostsByDate(a: IBlogPost, b: IBlogPost): number {
+    if (Date.parse(a.fields.date) > Date.parse(b.fields.date)) return -1;
+    if (Date.parse(a.fields.date) < Date.parse(b.fields.date)) return 1;
+    return 0;
+  }
+
   useEffect(() => {
     async function getPosts() {
       const allPosts = await fetchBlogPosts();
+      // allPosts.sort(orderPostsByDate);
+      setPosts([...allPosts.sort(orderPostsByDate)]);
+
       console.log(allPosts);
-      setPosts([...allPosts]);
     }
     getPosts();
   }, []);
+
+  function Loading() {
+    return <Skeleton />;
+  }
 
   return (
     <Layout>
@@ -42,7 +54,7 @@ function HomePage(): JSX.Element {
         Home Page
       </Heading>
       <Accordion
-        defaultIndex={[0, 1, 2]}
+        defaultIndex={[2, 3]}
         allowMultiple
         bg="hsla(220, 26%, 35%, 0.1875) !important"
         css={css`
@@ -62,11 +74,15 @@ function HomePage(): JSX.Element {
         {posts.map((post) => {
           return (
             <AccordionItem key={post.sys.id}>
-              <PostPreview
-                date={post.fields.date}
-                titleText={post.fields.title}
-                previewText={post.fields.previewContent}
-              />
+              <Suspense fallback={Loading()}>
+                <PostPreview
+                  date={post.fields.date}
+                  titleText={post.fields.title}
+                  previewText={post.fields.previewContent}
+                  previewImage={post.fields.previewImage}
+                  previewVideo={post.fields.previewVideo}
+                />
+              </Suspense>
             </AccordionItem>
           );
         })}

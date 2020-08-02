@@ -7,14 +7,17 @@ export interface IBlogPostFields {
   /** Title */
   title: string;
 
+  /** Date */
+  date: string;
+
   /** previewContent */
   previewContent: string;
 
   /** previewImage */
   previewImage?: Asset | undefined;
 
-  /** Date */
-  date: string;
+  /** PreviewVideo */
+  previewVideo?: Asset | undefined;
 
   /** ArticleContent */
   articleContent?: string | undefined;
