@@ -16,6 +16,8 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     <>
       <Helmet>
         <link rel="preconnect" href="https://cdn.contentful.com" />
+        <link rel="preconnect" href="https://images.ctfassets.net" />
+        <link rel="preconnect" href="https://videos.ctfassets.net" />
       </Helmet>
       <ChakraProvider theme={customTheme}>
         <CSSReset />
