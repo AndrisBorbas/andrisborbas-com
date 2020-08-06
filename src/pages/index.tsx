@@ -54,7 +54,7 @@ function HomePage(): JSX.Element {
         Home Page
       </Heading>
       <Accordion
-        defaultIndex={[2, 3]}
+        defaultIndex={[0, 1]}
         allowMultiple
         bg="hsla(220, 26%, 35%, 0.1875) !important"
         css={css`
