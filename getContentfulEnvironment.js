@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 module.exports = function () {
-  console.log(process.env);
   const contentfulClient = contentfulManagement.createClient({
     accessToken: process.env.NODE_CONTENTFUL_PERSONAL_ACCESS_TOKEN,
   });
