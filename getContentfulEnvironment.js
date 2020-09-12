@@ -6,7 +6,7 @@ dotenv.config();
 
 module.exports = function () {
   const contentfulClient = contentfulManagement.createClient({
-    accessToken: process.env.NODE_CONTENTFUL_PERSONAL_ACCESS_TOKEN,
+    accessToken: process.env.NODE_CONTENTFUL_ACCESS_TOKEN,
   });
 
   return contentfulClient
