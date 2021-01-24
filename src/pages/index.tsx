@@ -1,20 +1,26 @@
 import { Accordion, AccordionItem, Heading, Skeleton } from '@chakra-ui/core';
 import { css } from '@emotion/core';
 import { createClient, Entry } from 'contentful';
+import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Head from 'next/head';
 import React, { lazy, Suspense, useEffect, useState } from 'react';
 
 import { IBlogPost, IBlogPostFields } from '../@types/generated/contentful';
+import PostPreview from '../components/accordion/PostPreview';
 import { Layout } from '../components/Layout';
 
-const PostPreview = lazy(() => import('../components/accordion/PostPreview'));
-
-const client = createClient({
-  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
-  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
+const LazyPostPreview = lazy(() => {
+  return import('../components/accordion/PostPreview');
 });
 
-function HomePage(): JSX.Element {
+export const getStaticProps: GetStaticProps<{
+  posts: Array<Entry<IBlogPostFields>>;
+}> = async (context) => {
+  const client = createClient({
+    space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
+    accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
+  });
+
   async function fetchBlogPosts() {
     const entries = await client.getEntries<IBlogPostFields>({
       content_type: 'blogPost',
@@ -22,24 +28,26 @@ function HomePage(): JSX.Element {
     return entries.items;
   }
 
-  const [posts, setPosts] = useState<IBlogPost[]>([]);
-
   function orderPostsByDate(a: IBlogPost, b: IBlogPost): number {
     if (Date.parse(a.fields.date) > Date.parse(b.fields.date)) return -1;
     if (Date.parse(a.fields.date) < Date.parse(b.fields.date)) return 1;
     return 0;
   }
 
-  useEffect(() => {
-    async function getPosts() {
-      const allPosts = await fetchBlogPosts();
-      // allPosts.sort(orderPostsByDate);
-      setPosts([...allPosts.sort(orderPostsByDate)]);
+  // const allPosts = await fetchBlogPosts();
+  const allPosts = await client.getEntries<IBlogPostFields>({
+    content_type: 'blogPost',
+  });
 
-      console.log(allPosts);
-    }
-    getPosts();
-  }, []);
+  return { props: { posts: allPosts.items } };
+};
+
+function HomePage({
+  posts,
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+  // const [posts, setPosts] = useState<IBlogPost[]>([]);
+
+  // useEffect(() => {}, []);
 
   function Loading() {
     return <Skeleton />;
@@ -74,15 +82,13 @@ function HomePage(): JSX.Element {
         {posts.map((post) => {
           return (
             <AccordionItem key={post.sys.id}>
-              <Suspense fallback={Loading()}>
-                <PostPreview
-                  date={post.fields.date}
-                  titleText={post.fields.title}
-                  previewText={post.fields.previewContent}
-                  previewImage={post.fields.previewImage}
-                  previewVideo={post.fields.previewVideo}
-                />
-              </Suspense>
+              <PostPreview
+                date={post.fields.date}
+                titleText={post.fields.title}
+                previewText={post.fields.previewContent}
+                previewImage={post.fields.previewImage}
+                previewVideo={post.fields.previewVideo}
+              />
             </AccordionItem>
           );
         })}
