@@ -39,6 +39,8 @@ export const getStaticProps: GetStaticProps<{
     content_type: 'blogPost',
   });
 
+  allPosts.items.sort(orderPostsByDate);
+
   return { props: { posts: allPosts.items } };
 };
 
