@@ -64,7 +64,7 @@ export default function PostPreview({
 							// maxW={400}
 							minW={["100%", "280px"]}
 							boxShadow="rgba(0, 0, 0, 0.3) 0px 0.5rem 1rem 0px,
-                           rgba(0, 0, 0, 0.3) 0px 1rem 2rem 0px"
+												 rgba(0, 0, 0, 0.3) 0px 1rem 2rem 0px"
 							borderRadius="15px"
 							maxW={["100%", "100%", "50%", "33%"]}
 						/>
@@ -75,7 +75,7 @@ export default function PostPreview({
 							ml={[0, 0, 4]}
 							mb={["1rem", "1rem", "auto"]}
 							boxShadow="rgba(0, 0, 0, 0.3) 0px 0.5rem 1rem 0px,
-                           rgba(0, 0, 0, 0.3) 0px 1rem 2rem 0px"
+												 rgba(0, 0, 0, 0.3) 0px 1rem 2rem 0px"
 							borderRadius="15px"
 							minW={["100%", "280px"]}
 							maxW={["100%", "100%", "min(575px,50%)", "min(575px,50%)"]}

@@ -4,6 +4,7 @@ import renderToString from "next-mdx-remote/render-to-string";
 import type { MdxRemote } from "next-mdx-remote/types";
 
 import type { IBlogPost, IBlogPostFields } from "@/@types/generated/contentful";
+import PreviewLink from "@/components/accordion/PreviewLink";
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID ?? "ErrorNoSpaceID",
@@ -31,16 +32,15 @@ export default async function getCmsData() {
 
 	allPosts.items.sort(orderEntriesByDate);
 
-	const renderedPosts: (IBlogPost & {
-		mdxSource: MdxRemote.Source;
-	})[] = await Promise.all(
+	const renderedPosts = await Promise.all(
 		allPosts.items.map(async (item) => {
-			const mdxSource = await renderToString(item.fields.previewContent);
-			const r = {
+			const mdxSource = await renderToString(item.fields.previewContent, {
+				components: { a: PreviewLink },
+			});
+			return {
 				mdxSource,
 				...item,
 			} as IBlogPost & { mdxSource: MdxRemote.Source };
-			return r;
 		}),
 	);
 
