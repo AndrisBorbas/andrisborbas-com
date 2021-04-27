@@ -1,30 +1,21 @@
-import { ChakraProvider, CSSReset } from '@chakra-ui/core';
-import theme from '@chakra-ui/theme';
-import type { AppProps } from 'next/app';
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import { ChakraProvider } from "@chakra-ui/react";
+import type { AppProps } from "next/app";
+import Head from "next/head";
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  const customTheme = {
-    ...theme,
-    config: {
-      initialColorMode: 'dark',
-      useSystemColorMode: false,
-    },
-  };
-  return (
-    <>
-      <Helmet>
-        <link rel="preconnect" href="https://cdn.contentful.com" />
-        <link rel="preconnect" href="https://images.ctfassets.net" />
-        <link rel="preconnect" href="https://videos.ctfassets.net" />
-      </Helmet>
-      <ChakraProvider theme={customTheme}>
-        <CSSReset />
-        <Component {...pageProps} />
-      </ChakraProvider>
-    </>
-  );
+import theme from "@/styles/theme";
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+	return (
+		<>
+			<Head>
+				<meta name="color-scheme" content="dark light" />
+				<link rel="preconnect" href="https://cdn.contentful.com" />
+				<link rel="preconnect" href="https://images.ctfassets.net" />
+				<link rel="preconnect" href="https://videos.ctfassets.net" />
+			</Head>
+			<ChakraProvider theme={theme}>
+				<Component {...pageProps} />
+			</ChakraProvider>
+		</>
+	);
 }
-
-export default MyApp;
