@@ -6,7 +6,8 @@ module.exports = withPlugins(
 	{
 		reactStrictMode: true,
 		future: {
-			webpack5: true,
+			// Disable until fixed on vercel
+			// webpack5: true,
 			strictPostcssConfiguration: true,
 			excludeDefaultMomentLocales: true,
 		},
