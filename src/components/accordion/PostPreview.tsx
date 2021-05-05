@@ -1,25 +1,29 @@
+import { LinkIcon } from "@chakra-ui/icons";
 import {
 	AccordionButton,
 	AccordionIcon,
 	AccordionPanel,
 	Box,
-	Button,
 	Flex,
 	Heading,
-	Icon,
 	Image,
-	Link as ChakraLink,
-	LinkProps,
+	Link,
 	Text,
+	useToast,
 } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import type { Asset } from "contentful";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import React from "react";
+
+import PreviewLink from "./PreviewLink";
+
+const components = { a: PreviewLink };
 
 type ArticleContentProps = {
 	date: string;
 	titleText: string;
-	previewText: React.ReactNode;
+	previewText: MDXRemoteSerializeResult;
 	previewImage: Asset | undefined;
 	previewVideo: Asset | undefined;
 };
@@ -31,11 +35,52 @@ export default function PostPreview({
 	previewImage,
 	previewVideo,
 }: ArticleContentProps): JSX.Element {
+	const toast = useToast();
+	const id = titleText.toLowerCase().replace(/ /g, "");
 	return (
 		<>
 			<AccordionButton py={3}>
 				<Box flex="1" textAlign="left">
-					<Heading size="lg">{titleText}</Heading>
+					<Box display="flex" flexDirection="row">
+						<Heading
+							size="lg"
+							id={id}
+							mr={1}
+							css={css`
+								scroll-margin: 90px;
+								scroll-margin-top: 90px;
+							`}
+						>
+							{titleText}
+						</Heading>
+						<Link
+							onClick={(e) => {
+								e.stopPropagation();
+								navigator.clipboard.writeText(id);
+								toast({
+									title: "Copied",
+									description: "Copied post link to clipboard.",
+									position: "bottom-left",
+									status: "info",
+									variant: "left-accent",
+									duration: 2500,
+									isClosable: true,
+								});
+							}}
+							href={`/#${id}`}
+							colorScheme="gray"
+							variant="ghost"
+							aria-label="Share post"
+							color="blue.400"
+							_hover={{
+								color: "blue.300",
+							}}
+							alignSelf="flex-end"
+							mr={3}
+						>
+							<LinkIcon w={6} h={6} p={1} mb="2px" />
+						</Link>
+					</Box>
 				</Box>
 				<AccordionIcon />
 			</AccordionButton>
@@ -104,7 +149,9 @@ export default function PostPreview({
 						</Box>
 					)}
 
-					<Box pb={2}>{previewText}</Box>
+					<Box pb={2}>
+						<MDXRemote {...previewText} components={components} lazy />
+					</Box>
 				</Flex>
 			</AccordionPanel>
 		</>
