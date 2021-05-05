@@ -23,13 +23,22 @@ export default function Footer(): JSX.Element {
 				my="auto"
 			>
 				<Text pb={2} my="auto">
-					Built with ❤, <Link href="https://nextjs.org">Next.JS</Link> and{" "}
-					<Link href="https://next.chakra-ui.com/">Chakra-UI 1.0</Link> in{" "}
+					Built with ❤,{" "}
+					<Link href="https://nextjs.org" isExternal>
+						Next.JS
+					</Link>{" "}
+					and{" "}
+					<Link href="https://next.chakra-ui.com/" isExternal>
+						Chakra-UI
+					</Link>{" "}
+					in{" "}
 					<span role="img" aria-label="HU" aria-labelledby="HU">
 						🇭🇺
 					</span>
 					<Text as="span" float="right" display={["none", "inherit"]}>
-						Copyright © 2020
+						<Link href="https://twitter.com/AndrisBorbas" isExternal>
+							© 2021 AndrisBorbas
+						</Link>
 					</Text>
 				</Text>
 			</Box>
