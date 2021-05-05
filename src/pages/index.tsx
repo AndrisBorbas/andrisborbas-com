@@ -26,7 +26,7 @@ function HomePage({
 				<title>AndrisBorbas&apos;s home page</title>
 			</Head>
 			<Heading as="h1" size="2xl" mb={8}>
-				Home Page
+				Blog Posts
 			</Heading>
 			<Accordion
 				defaultIndex={[0, 1]}
