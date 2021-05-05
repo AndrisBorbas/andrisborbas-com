@@ -8,8 +8,8 @@ module.exports = withPlugins(
 		future: {
 			// Disable until fixed on vercel
 			// webpack5: true,
-			strictPostcssConfiguration: true,
-			excludeDefaultMomentLocales: true,
+			// strictPostcssConfiguration: true,
+			// excludeDefaultMomentLocales: true,
 		},
 	},
 );
