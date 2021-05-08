@@ -29,7 +29,7 @@
 		"@next/bundle-analyzer": "^10.2.0",
 		"contentful": "^8.3.2",
 		"framer-motion": "^4.1.11",
-		"next": "^10.2.1-canary.2",
+		"next": "^10.2.1-canary.3",
 		"next-compose-plugins": "^2.2.1",
 		"next-mdx-remote": "^3.0.1",
 		"react": "^17.0.2",
