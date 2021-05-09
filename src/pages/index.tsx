@@ -2,10 +2,8 @@ import { Accordion, AccordionItem, Heading } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import hydrate from "next-mdx-remote/hydrate";
 
 import PostPreview from "@/components/accordion/PostPreview";
-import PreviewLink from "@/components/accordion/PreviewLink";
 import { Layout } from "@/components/Layout";
 import getCmsData from "@/utils/contentful";
 
