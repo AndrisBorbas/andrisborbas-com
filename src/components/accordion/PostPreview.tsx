@@ -14,12 +14,17 @@ import {
 } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import type { Asset } from "contentful";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import React from "react";
+
+import PreviewLink from "./PreviewLink";
+
+const components = { a: PreviewLink };
 
 type ArticleContentProps = {
 	date: string;
 	titleText: string;
-	previewText: React.ReactNode;
+	previewText: MDXRemoteSerializeResult;
 	previewImage: Asset | undefined;
 	previewVideo: Asset | undefined;
 };
@@ -104,7 +109,9 @@ export default function PostPreview({
 						</Box>
 					)}
 
-					<Box pb={2}>{previewText}</Box>
+					<Box pb={2}>
+						<MDXRemote {...previewText} components={components} />
+					</Box>
 				</Flex>
 			</AccordionPanel>
 		</>
