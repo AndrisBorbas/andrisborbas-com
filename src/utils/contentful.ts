@@ -1,10 +1,9 @@
 import type { Entry } from "contentful";
 import { createClient } from "contentful";
-import renderToString from "next-mdx-remote/render-to-string";
-import type { MdxRemote } from "next-mdx-remote/types";
+import type { MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 
 import type { IBlogPost, IBlogPostFields } from "@/@types/generated/contentful";
-import PreviewLink from "@/components/accordion/PreviewLink";
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID ?? "ErrorNoSpaceID",
@@ -34,13 +33,13 @@ export default async function getCmsData() {
 
 	const renderedPosts = await Promise.all(
 		allPosts.items.map(async (item) => {
-			const mdxSource = await renderToString(item.fields.previewContent, {
-				components: { a: PreviewLink },
-			});
+			const mdxSource = await serialize(item.fields.previewContent);
 			return {
 				mdxSource,
 				...item,
-			} as IBlogPost & { mdxSource: MdxRemote.Source };
+			} as IBlogPost & {
+				mdxSource: MDXRemoteSerializeResult;
+			};
 		}),
 	);
 

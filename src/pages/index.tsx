@@ -22,12 +22,6 @@ export const getStaticProps = async () => {
 function HomePage({
 	posts,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
-	const hydratedPosts = posts.map((post) => {
-		const content = hydrate(post.mdxSource, {
-			components: { a: PreviewLink },
-		});
-		return { ...post, content };
-	});
 	return (
 		<Layout>
 			<Head>
@@ -54,13 +48,13 @@ function HomePage({
 					}
 				`}
 			>
-				{hydratedPosts.map((post) => {
+				{posts.map((post) => {
 					return (
 						<AccordionItem key={post.sys.id}>
 							<PostPreview
 								date={post.fields.date}
 								titleText={post.fields.title}
-								previewText={post.content}
+								previewText={post.mdxSource}
 								previewImage={post.fields.previewImage}
 								previewVideo={post.fields.previewVideo}
 							/>
