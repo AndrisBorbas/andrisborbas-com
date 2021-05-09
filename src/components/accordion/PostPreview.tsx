@@ -99,7 +99,7 @@ export default function PostPreview({
 				<Flex
 					flexDir={["column", "column", "row-reverse"]}
 					justify="space-between"
-					pb={4}
+					pb={6}
 				>
 					{previewImage !== undefined && previewVideo === undefined && (
 						<Image
@@ -149,9 +149,7 @@ export default function PostPreview({
 						</Box>
 					)}
 
-					<Box pb={2}>
-						<MDXRemote {...previewText} components={components} lazy />
-					</Box>
+					<MDXRemote {...previewText} components={components} lazy />
 				</Flex>
 			</AccordionPanel>
 		</>
