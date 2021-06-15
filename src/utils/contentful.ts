@@ -34,10 +34,13 @@ export default async function getCmsData() {
 	const renderedPosts = await Promise.all(
 		allPosts.items.map(async (item) => {
 			const mdxSource = await serialize(item.fields.previewContent);
+			const id = item.fields.title.toLowerCase().replace(/ /g, "");
 			return {
 				mdxSource,
+				id,
 				...item,
 			} as IBlogPost & {
+				id: string;
 				mdxSource: MDXRemoteSerializeResult;
 			};
 		}),

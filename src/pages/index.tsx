@@ -2,6 +2,8 @@ import { Accordion, AccordionItem, Heading } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import { useCallback, useEffect, useState } from "react";
 
 import PostPreview from "@/components/accordion/PostPreview";
 import { Layout } from "@/components/Layout";
@@ -20,6 +22,39 @@ export const getStaticProps = async () => {
 function HomePage({
 	posts,
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+	const router = useRouter();
+	const [opened, setOpened] = useState([0, 1]);
+
+	function updateOpened(indices: number[]) {
+		setOpened(indices);
+	}
+
+	const setupOpened = useCallback(
+		(id: string) => {
+			const linkIndex = posts.findIndex((post) => post.id === id);
+
+			if (linkIndex !== -1 && !opened.includes(linkIndex)) {
+				setOpened([...opened, linkIndex]);
+			}
+		},
+		[opened, posts],
+	);
+	useEffect(() => {
+		console.log(opened);
+		const id = router.asPath.substring(
+			router.asPath.indexOf("#") + 1,
+			router.asPath.indexOf("?") !== -1
+				? router.asPath.indexOf("?")
+				: router.asPath.length,
+		);
+
+		setupOpened(id);
+		router.push(router.asPath);
+
+		return () => {};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [router.asPath]);
+
 	return (
 		<Layout>
 			<Head>
@@ -30,6 +65,8 @@ function HomePage({
 			</Heading>
 			<Accordion
 				defaultIndex={[0, 1]}
+				onChange={updateOpened}
+				index={opened}
 				allowMultiple
 				bg="hsla(220, 26%, 35%, 0.1875) !important"
 				css={css`
@@ -48,11 +85,12 @@ function HomePage({
 			>
 				{posts.map((post) => {
 					return (
-						<AccordionItem key={post.sys.id}>
+						<AccordionItem key={post.id}>
 							<PostPreview
 								date={post.fields.date}
 								titleText={post.fields.title}
 								previewText={post.mdxSource}
+								id={post.id}
 								previewImage={post.fields.previewImage}
 								previewVideo={post.fields.previewVideo}
 							/>

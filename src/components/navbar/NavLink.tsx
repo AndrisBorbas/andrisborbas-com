@@ -1,13 +1,27 @@
-import { Link, LinkProps } from "@chakra-ui/react";
+import { Link as ChakraLink, LinkProps } from "@chakra-ui/react";
+import Link from "next/link";
 import React from "react";
+
+type NavLinkProps = {
+	isExternal?: boolean;
+	href: string;
+} & LinkProps;
 
 export default function NavLink({
 	children,
+	isExternal,
+	href,
 	...restProps
-}: LinkProps): JSX.Element {
+}: NavLinkProps): JSX.Element {
 	return (
-		<Link _hover={{ textDecoration: "none" }} {...restProps}>
-			{children}
+		<Link href={href}>
+			<ChakraLink
+				_hover={{ textDecoration: "none" }}
+				target={`${isExternal === true ? "_blank" : ""}`}
+				{...restProps}
+			>
+				{children}
+			</ChakraLink>
 		</Link>
 	);
 }

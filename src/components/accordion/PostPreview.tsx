@@ -22,6 +22,7 @@ const components = { a: PreviewLink };
 
 type ArticleContentProps = {
 	date: string;
+	id: string;
 	titleText: string;
 	previewText: MDXRemoteSerializeResult;
 	previewImage: Asset | undefined;
@@ -30,13 +31,14 @@ type ArticleContentProps = {
 
 export default function PostPreview({
 	date,
+	id,
 	titleText,
 	previewText,
 	previewImage,
 	previewVideo,
 }: ArticleContentProps): JSX.Element {
 	const toast = useToast();
-	const id = titleText.toLowerCase().replace(/ /g, "");
+
 	return (
 		<>
 			<AccordionButton py={3}>
@@ -56,7 +58,11 @@ export default function PostPreview({
 						<Link
 							onClick={(e) => {
 								e.stopPropagation();
-								navigator.clipboard.writeText(id);
+								navigator.clipboard.writeText(
+									`${window.location.protocol}//${window.location.hostname}${
+										window.location.port ? `:${window.location.port}` : ""
+									}/#${id}`,
+								);
 								toast({
 									title: "Copied",
 									description: "Copied post link to clipboard.",

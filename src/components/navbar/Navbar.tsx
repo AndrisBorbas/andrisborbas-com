@@ -64,7 +64,12 @@ export default function Navbar(): JSX.Element {
 						Home
 					</Heading>
 				</NavLink>
-				<NavLink href="https://github.com/AndrisBorbas" target="blank">
+				<NavLink href="/cv">
+					<Heading as="h3" size="sm">
+						CV
+					</Heading>
+				</NavLink>
+				<NavLink href="https://github.com/AndrisBorbas" isExternal>
 					<Heading as="h3" size="sm">
 						My GitHub
 					</Heading>
@@ -79,7 +84,7 @@ export default function Navbar(): JSX.Element {
 						<MenuItem>
 							<NavLink
 								href="https://andrisborbas.github.io/FactorioRatioCounter"
-								target="blank"
+								isExternal
 							>
 								Factorio Ratio Counter
 							</NavLink>
