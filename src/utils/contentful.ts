@@ -24,7 +24,7 @@ function orderEntriesByDate(
 	return Date.parse(b.fields.date) - Date.parse(a.fields.date);
 }
 
-export default async function getCmsData() {
+export async function getCmsData() {
 	const allPosts = await client.getEntries<IBlogPostFields>({
 		content_type: "blogPost",
 	});

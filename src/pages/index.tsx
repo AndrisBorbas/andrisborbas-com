@@ -5,11 +5,11 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useCallback, useEffect, useState } from "react";
 
-import PostPreview from "@/components/accordion/PostPreview";
+import { PostPreview } from "@/components/accordion/PostPreview";
 import { Layout } from "@/components/Layout";
-import getCmsData from "@/utils/contentful";
+import { getCmsData } from "@/utils/contentful";
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
 	const { posts } = await getCmsData();
 
 	return {
@@ -17,11 +17,11 @@ export const getStaticProps = async () => {
 			posts,
 		},
 	};
-};
+}
 
-function HomePage({
+export default function Index({
 	posts,
-}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	const router = useRouter();
 	const [opened, setOpened] = useState([0, 1]);
 
@@ -101,5 +101,3 @@ function HomePage({
 		</Layout>
 	);
 }
-
-export default HomePage;

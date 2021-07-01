@@ -7,14 +7,14 @@ type NavLinkProps = {
 	href: string;
 } & LinkProps;
 
-export default function NavLink({
+export function NavLink({
 	children,
 	isExternal,
 	href,
 	...restProps
-}: NavLinkProps): JSX.Element {
+}: NavLinkProps) {
 	return (
-		<Link href={href}>
+		<Link href={href} passHref>
 			<ChakraLink
 				_hover={{ textDecoration: "none" }}
 				target={`${isExternal === true ? "_blank" : ""}`}

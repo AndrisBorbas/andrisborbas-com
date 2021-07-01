@@ -1,10 +1,6 @@
 import { Link, LinkProps } from "@chakra-ui/react";
 
-export default function PreviewLink({
-	href,
-	children,
-	...restProps
-}: LinkProps) {
+export function PreviewLink({ href, children, ...restProps }: LinkProps) {
 	return (
 		<Link
 			href={href}

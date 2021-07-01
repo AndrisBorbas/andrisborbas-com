@@ -4,6 +4,7 @@ import {
 	Heading,
 	Icon,
 	Image,
+	Img,
 	Menu,
 	MenuButton,
 	MenuDivider,
@@ -17,9 +18,9 @@ import {
 import { css } from "@emotion/react";
 import React from "react";
 
-import NavLink from "./NavLink";
+import { NavLink } from "./NavLink";
 
-export default function Navbar(): JSX.Element {
+export function Navbar() {
 	return (
 		<Box
 			as="nav"
@@ -81,6 +82,11 @@ export default function Navbar(): JSX.Element {
 						Projects
 					</MenuButton>
 					<MenuList>
+						<MenuItem>
+							<NavLink href="https://destinylauncher.net" isExternal>
+								Destiny Launcher
+							</NavLink>
+						</MenuItem>
 						<MenuItem>
 							<NavLink
 								href="https://andrisborbas.github.io/FactorioRatioCounter"

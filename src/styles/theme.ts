@@ -5,10 +5,9 @@ const config: { initialColorMode: ColorMode; useSystemColorMode: boolean } = {
 	useSystemColorMode: false,
 };
 
-const theme = extendTheme({
+export const theme = extendTheme({
 	config,
 	fonts: {
 		Lato: "Lato",
 	},
 });
-export default theme;

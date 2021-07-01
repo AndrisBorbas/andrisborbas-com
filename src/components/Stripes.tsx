@@ -1,7 +1,7 @@
 import { Box, Grid } from "@chakra-ui/react";
 import React from "react";
 
-export default function Stripes(): JSX.Element {
+export function Stripes() {
 	return (
 		<Grid
 			position="absolute"

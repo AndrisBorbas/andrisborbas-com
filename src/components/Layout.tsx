@@ -1,13 +1,13 @@
 import { Box } from "@chakra-ui/react";
 import React, { HTMLProps } from "react";
 
-import Footer from "./footer/Footer";
-import Navbar from "./navbar/Navbar";
-import Stripes from "./Stripes";
+import { Footer } from "./footer/Footer";
+import { Navbar } from "./navbar/Navbar";
+import { Stripes } from "./Stripes";
 
 export type LayoutProps = HTMLProps<HTMLDivElement>;
 
-export function Layout({ children }: LayoutProps): JSX.Element {
+export function Layout({ children }: LayoutProps) {
 	return (
 		<React.StrictMode>
 			<Stripes />

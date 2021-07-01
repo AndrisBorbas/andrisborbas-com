@@ -1,13 +1,15 @@
 const withBundleAnalyzer = require("@next/bundle-analyzer");
 const withPlugins = require("next-compose-plugins");
+const withTM = require("next-transpile-modules")(["@fontsource/lato"]);
+
+const nextConfig = {
+	reactStrictMode: true,
+	future: {
+		// strictPostcssConfiguration: true,
+	},
+};
 
 module.exports = withPlugins(
-	[withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })],
-	{
-		reactStrictMode: true,
-		future: {
-			strictPostcssConfiguration: true,
-			excludeDefaultMomentLocales: true,
-		},
-	},
+	[[withTM], [withBundleAnalyzer, { enabled: process.env.ANALYZE === "true" }]],
+	nextConfig,
 );

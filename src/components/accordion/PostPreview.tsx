@@ -7,6 +7,7 @@ import {
 	Flex,
 	Heading,
 	Image,
+	Img,
 	Link,
 	Text,
 	useToast,
@@ -16,7 +17,7 @@ import type { Asset } from "contentful";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import React from "react";
 
-import PreviewLink from "./PreviewLink";
+import { PreviewLink } from "./PreviewLink";
 
 const components = { a: PreviewLink };
 
@@ -29,7 +30,7 @@ type ArticleContentProps = {
 	previewVideo: Asset | undefined;
 };
 
-export default function PostPreview({
+export function PostPreview({
 	date,
 	id,
 	titleText,
@@ -108,7 +109,7 @@ export default function PostPreview({
 					pb={6}
 				>
 					{previewImage !== undefined && previewVideo === undefined && (
-						<Image
+						<Img
 							src={previewImage.fields.file.url}
 							ml={[0, 0, 4]}
 							mb={["1rem", "1rem", "auto"]}
@@ -118,6 +119,7 @@ export default function PostPreview({
 												 rgba(0, 0, 0, 0.3) 0px 1rem 2rem 0px"
 							borderRadius="15px"
 							maxW={["100%", "100%", "50%", "33%"]}
+							alt={previewImage.fields.title}
 						/>
 					)}
 					{previewVideo !== undefined && (
