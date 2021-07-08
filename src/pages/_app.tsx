@@ -6,7 +6,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 
-import { theme } from "@/styles/theme";
+import { defaultTheme } from "@/styles/theme";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
 	return (
@@ -17,7 +17,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 				<link rel="preconnect" href="https://images.ctfassets.net" />
 				<link rel="preconnect" href="https://videos.ctfassets.net" /> */}
 			</Head>
-			<ChakraProvider theme={theme}>
+			<ChakraProvider theme={defaultTheme}>
 				<Component {...pageProps} />
 			</ChakraProvider>
 		</>

@@ -149,7 +149,7 @@ export default function Cv() {
 
 					{/* Skills */}
 
-					<CVMarker>Experience</CVMarker>
+					<CVMarker>Experience*</CVMarker>
 					<Grid templateColumns="1fr 3fr" gap={4} mt={2}>
 						<CVTitle>Languages</CVTitle>
 						<Grid templateColumns="auto auto 2fr" gap={2}>
@@ -173,6 +173,15 @@ export default function Cv() {
 							<XP title="Java / C#" description="" level={2} />
 						</Grid>
 					</Grid>
+
+					{/* BottomText */}
+
+					<Text fontSize="sm" mt={8}>
+						<Box as="span" fontWeight="bold" fontSize="md">
+							*
+						</Box>
+						The marks represent experience relative to each other
+					</Text>
 				</Box>
 			</ChakraProvider>
 		</Layout>
