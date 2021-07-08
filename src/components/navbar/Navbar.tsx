@@ -31,7 +31,7 @@ export function Navbar() {
 			zIndex={1000}
 			mb={4}
 			p={4}
-			bg="hsla(220, 26%, 35%, 0.1875) !important"
+			bg="hsla(220, 26%, 35%, 0.1875)"
 			css={css`
 				@supports (
 					(-webkit-backdrop-filter: none) or (backdrop-filter: none) or

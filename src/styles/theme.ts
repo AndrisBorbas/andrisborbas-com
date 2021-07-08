@@ -5,9 +5,19 @@ const config: { initialColorMode: ColorMode; useSystemColorMode: boolean } = {
 	useSystemColorMode: false,
 };
 
-export const theme = extendTheme({
+export const defaultTheme = extendTheme({
 	config,
 	fonts: {
-		Lato: "Lato",
+		Lato: 'Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+	},
+});
+
+export const cvTheme = extendTheme({
+	config,
+	fonts: {
+		Lato: 'Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+		heading:
+			'Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+		body: 'Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
 	},
 });

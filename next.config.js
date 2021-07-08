@@ -10,6 +10,6 @@ const nextConfig = {
 };
 
 module.exports = withPlugins(
-	[[withTM], [withBundleAnalyzer, { enabled: process.env.ANALYZE === "true" }]],
+	[withTM, withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })],
 	nextConfig,
 );

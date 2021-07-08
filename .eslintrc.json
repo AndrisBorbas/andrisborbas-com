@@ -42,7 +42,9 @@
 		"jsx-a11y/anchor-is-valid": "off", // Doesn't play well with Next `<Link>`
 		"prefer-exponentiation-operator": "error", // Auto-fix for an inherited rule
 		"react/react-in-jsx-scope": "off", // React is always in scope with Next
-		"react/require-default-props": "off" // React `defaultProps` are deprecated
+		"react/require-default-props": "off", // React `defaultProps` are deprecated
+
+		"no-plusplus": "off"
 	},
 
 	"overrides": [
