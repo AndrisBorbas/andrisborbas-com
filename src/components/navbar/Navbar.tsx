@@ -43,6 +43,11 @@ export function Navbar() {
 						backdrop-filter: blur(7px);
 					}
 				}
+				@media print {
+					& {
+						display: none;
+					}
+				}
 			`}
 		>
 			<Stack spacing={4} direction="row" align="center">

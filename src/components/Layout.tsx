@@ -1,4 +1,5 @@
 import { Box } from "@chakra-ui/react";
+import { css } from "@emotion/react";
 import React, { HTMLProps } from "react";
 
 import { Footer } from "./footer/Footer";

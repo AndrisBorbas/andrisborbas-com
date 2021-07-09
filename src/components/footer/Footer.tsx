@@ -1,4 +1,5 @@
 import { Box, Link, Text } from "@chakra-ui/react";
+import { css } from "@emotion/react";
 import React from "react";
 
 export function Footer() {
@@ -15,6 +16,13 @@ export function Footer() {
 			bg="hsla(220, 26%, 10%, 1)"
 			mt={8}
 			zIndex={1}
+			css={css`
+				@media print {
+					& {
+						display: none;
+					}
+				}
+			`}
 		>
 			<Box
 				maxW={["100%", "540px", "720px", "960px", "1140px"]}
@@ -28,7 +36,7 @@ export function Footer() {
 						Next.JS
 					</Link>{" "}
 					and{" "}
-					<Link href="https://next.chakra-ui.com/" isExternal>
+					<Link href="https://chakra-ui.com/" isExternal>
 						Chakra-UI
 					</Link>{" "}
 					in{" "}
