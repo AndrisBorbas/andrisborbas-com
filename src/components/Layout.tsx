@@ -17,10 +17,9 @@ export function Layout({ children }: LayoutProps) {
 			<Box
 				position="relative"
 				display="flex"
+				justifyContent="space-between"
 				flexDirection="column"
-				h="100%"
-				pb="76px"
-				minH="1050px"
+				minH="calc(100vh - 88px)"
 			>
 				<Box
 					as="main"

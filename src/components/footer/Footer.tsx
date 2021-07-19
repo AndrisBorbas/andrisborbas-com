@@ -8,7 +8,6 @@ export function Footer() {
 			as="footer"
 			h="60px"
 			w="100%"
-			position="absolute"
 			bottom={0}
 			left={0}
 			right={0}

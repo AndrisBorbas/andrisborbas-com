@@ -53,8 +53,8 @@ export default function Cv() {
 					}
 				`}
 			>
-				Print this page <Kbd>CTRL</Kbd> / <Kbd>⌘</Kbd> + <Kbd>P</Kbd>, to
-				download my résumé. (A3 paper size recommended)
+				Print this page <Kbd>CTRL</Kbd> + <Kbd>P</Kbd> or <Kbd>⌘</Kbd> +{" "}
+				<Kbd>P</Kbd>, to download my résumé. (A3 paper size recommended)
 			</Heading>
 			<ChakraProvider theme={cvTheme}>
 				<Box
@@ -125,8 +125,9 @@ export default function Cv() {
 							</Heading>
 
 							<Link href="mailto:andris.borbas@gmail.com" passHref>
-								<ChakraLink>
+								<ChakraLink w="fit-content" display="block">
 									<Heading
+										w="fit-content"
 										as="h4"
 										size="lg"
 										pt="2"
@@ -136,6 +137,25 @@ export default function Cv() {
 										}}
 									>
 										andris.borbas@gmail.com
+									</Heading>
+								</ChakraLink>
+							</Link>
+							<Link href="tel:+36208019447" passHref>
+								<ChakraLink
+									w="fit-content"
+									display={process.env.VERCEL_ENV ? "none" : "block"}
+								>
+									<Heading
+										w="fit-content"
+										as="h4"
+										size="md"
+										pt="2"
+										color="gray.800"
+										_hover={{
+											color: "gray.700",
+										}}
+									>
+										+36208019447
 									</Heading>
 								</ChakraLink>
 							</Link>
@@ -151,7 +171,7 @@ export default function Cv() {
 
 					{/* Separator */}
 
-					<Grid templateColumns="1fr 2fr 1fr" mt={4} mb={4}>
+					<Grid templateColumns="1fr 2fr 1fr" mb={4} mt={12}>
 						<Box
 							transform="skewY(-15deg)"
 							transformOrigin="top right"
