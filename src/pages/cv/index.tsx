@@ -399,10 +399,10 @@ export default function Cv() {
 						This PDF was generated from my website{" "}
 						<ChakraLink
 							color="blue.500"
-							href="https://next.andrisborbas.com"
+							href="https://andrisborbas.com/cv"
 							target="_blank"
 						>
-							https://andrisborbas.com
+							https://andrisborbas.com/cv
 						</ChakraLink>
 					</Text>
 				</Box>
