@@ -54,9 +54,10 @@ export default function Cv() {
 				`}
 			>
 				To download my résumé, print this page to PDF with <Kbd>CTRL</Kbd> +{" "}
-				<Kbd>P</Kbd> or <Kbd>⌘</Kbd> + <Kbd>P</Kbd>.{" "}
+				<Kbd>P</Kbd> or <Kbd>⌘</Kbd> + <Kbd>P</Kbd>. <br />
 				<Text as="i" fontSize="sm" color="gray.300">
-					(A3 paper size recommended, with background graphics enabled)
+					(A3 paper size recommended, with no margins and background graphics
+					enabled)
 				</Text>
 			</Heading>
 			<ChakraProvider theme={cvTheme}>
