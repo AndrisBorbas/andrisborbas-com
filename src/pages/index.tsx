@@ -2,42 +2,71 @@ import { Accordion, AccordionItem, Heading } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
-import hydrate from "next-mdx-remote/hydrate";
+import { useRouter } from "next/router";
+import { useCallback, useEffect, useState } from "react";
 
-import PostPreview from "@/components/accordion/PostPreview";
-import PreviewLink from "@/components/accordion/PreviewLink";
+import { PostPreview } from "@/components/accordion/PostPreview";
 import { Layout } from "@/components/Layout";
-import getCmsData from "@/utils/contentful";
+import { getPosts } from "@/utils/contentful";
 
-export const getStaticProps = async () => {
-	const { posts } = await getCmsData();
+export async function getStaticProps() {
+	const posts = await getPosts();
 
 	return {
 		props: {
 			posts,
 		},
 	};
-};
+}
 
-function HomePage({
-	posts,
-}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
-	const hydratedPosts = posts.map((post) => {
-		const content = hydrate(post.mdxSource, {
-			components: { a: PreviewLink },
-		});
-		return { ...post, content };
-	});
+export type IndexProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+export default function Index({ posts }: IndexProps) {
+	const router = useRouter();
+	const [opened, setOpened] = useState([0, 1]);
+
+	function updateOpened(indices: number[]) {
+		setOpened(indices);
+	}
+
+	const setupOpened = useCallback(
+		(id: string) => {
+			const linkIndex = posts.findIndex((post) => post.id === id);
+
+			if (linkIndex !== -1 && !opened.includes(linkIndex)) {
+				setOpened([...opened, linkIndex]);
+			}
+		},
+		[opened, posts],
+	);
+	useEffect(() => {
+		console.log(opened);
+		const id = router.asPath.substring(
+			router.asPath.indexOf("#") + 1,
+			router.asPath.includes("?")
+				? router.asPath.indexOf("?")
+				: router.asPath.length,
+		);
+
+		setupOpened(id);
+		router.push(router.asPath);
+
+		return () => {};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [router.asPath]);
+
 	return (
 		<Layout>
 			<Head>
 				<title>AndrisBorbas&apos;s home page</title>
 			</Head>
 			<Heading as="h1" size="2xl" mb={8}>
-				Home Page
+				Blog Posts
 			</Heading>
 			<Accordion
 				defaultIndex={[0, 1]}
+				onChange={(indices) => updateOpened(indices as number[])}
+				index={opened}
 				allowMultiple
 				bg="hsla(220, 26%, 35%, 0.1875) !important"
 				css={css`
@@ -54,13 +83,14 @@ function HomePage({
 					}
 				`}
 			>
-				{hydratedPosts.map((post) => {
+				{posts.map((post) => {
 					return (
-						<AccordionItem key={post.sys.id}>
+						<AccordionItem key={post.id}>
 							<PostPreview
 								date={post.fields.date}
 								titleText={post.fields.title}
-								previewText={post.content}
+								previewText={post.mdxSource}
+								id={post.id}
 								previewImage={post.fields.previewImage}
 								previewVideo={post.fields.previewVideo}
 							/>
@@ -71,5 +101,3 @@ function HomePage({
 		</Layout>
 	);
 }
-
-export default HomePage;

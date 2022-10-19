@@ -1,13 +1,19 @@
-import { Link as ChakraLink, LinkProps } from "@chakra-ui/react";
+import { Link, LinkProps } from "@chakra-ui/react";
 
-export default function PreviewLink({
-	href,
-	children,
-	...restProps
-}: LinkProps) {
+export function PreviewLink({ href, children, ...restProps }: LinkProps) {
 	return (
-		<ChakraLink href={href} color="blue.400" {...restProps}>
+		<Link
+			href={href}
+			color="blue.400"
+			_hover={{
+				textDecoration: "underline",
+				color: "blue.300",
+			}}
+			rel="noopener"
+			isExternal
+			{...restProps}
+		>
 			{children}
-		</ChakraLink>
+		</Link>
 	);
 }

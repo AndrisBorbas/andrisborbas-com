@@ -4,6 +4,7 @@ import {
 	Heading,
 	Icon,
 	Image,
+	Img,
 	Menu,
 	MenuButton,
 	MenuDivider,
@@ -17,9 +18,9 @@ import {
 import { css } from "@emotion/react";
 import React from "react";
 
-import NavLink from "./NavLink";
+import { NavLink } from "./NavLink";
 
-export default function Navbar(): JSX.Element {
+export function Navbar() {
 	return (
 		<Box
 			as="nav"
@@ -30,7 +31,7 @@ export default function Navbar(): JSX.Element {
 			zIndex={1000}
 			mb={4}
 			p={4}
-			bg="hsla(220, 26%, 35%, 0.1875) !important"
+			bg="hsla(220, 26%, 35%, 0.1875)"
 			css={css`
 				@supports (
 					(-webkit-backdrop-filter: none) or (backdrop-filter: none) or
@@ -40,6 +41,11 @@ export default function Navbar(): JSX.Element {
 						-webkit-backdrop-filter: blur(7px);
 						-ms-backdrop-filter: blur(7px);
 						backdrop-filter: blur(7px);
+					}
+				}
+				@media print {
+					& {
+						display: none;
 					}
 				}
 			`}
@@ -64,7 +70,12 @@ export default function Navbar(): JSX.Element {
 						Home
 					</Heading>
 				</NavLink>
-				<NavLink href="https://github.com/AndrisBorbas" target="blank">
+				<NavLink href="/cv">
+					<Heading as="h3" size="sm">
+						CV
+					</Heading>
+				</NavLink>
+				<NavLink href="https://github.com/AndrisBorbas" isExternal>
 					<Heading as="h3" size="sm">
 						My GitHub
 					</Heading>
@@ -77,9 +88,14 @@ export default function Navbar(): JSX.Element {
 					</MenuButton>
 					<MenuList>
 						<MenuItem>
+							<NavLink href="https://destinylauncher.net" isExternal>
+								Destiny Launcher
+							</NavLink>
+						</MenuItem>
+						<MenuItem>
 							<NavLink
 								href="https://andrisborbas.github.io/FactorioRatioCounter"
-								target="blank"
+								isExternal
 							>
 								Factorio Ratio Counter
 							</NavLink>

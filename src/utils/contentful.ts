@@ -1,10 +1,7 @@
-import type { Entry } from "contentful";
 import { createClient } from "contentful";
-import renderToString from "next-mdx-remote/render-to-string";
-import type { MdxRemote } from "next-mdx-remote/types";
+import { serialize } from "next-mdx-remote/serialize";
 
-import type { IBlogPost, IBlogPostFields } from "@/@types/generated/contentful";
-import PreviewLink from "@/components/accordion/PreviewLink";
+import type { TypeBlogPostFields } from "@/@types/generated/index";
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID ?? "ErrorNoSpaceID",
@@ -16,35 +13,25 @@ const client = createClient({
 		process.env.VERCEL_ENV === "production"
 			? "cdn.contentful.com"
 			: "preview.contentful.com",
-});
+}).withoutUnresolvableLinks;
 
-function orderEntriesByDate(
-	a: Entry<IBlogPostFields>,
-	b: Entry<IBlogPostFields>,
-): number {
-	return Date.parse(b.fields.date) - Date.parse(a.fields.date);
-}
-
-export default async function getCmsData() {
-	const allPosts = await client.getEntries<IBlogPostFields>({
+export async function getPosts() {
+	const allPosts = await client.getEntries<TypeBlogPostFields>({
 		content_type: "blogPost",
+		order: "-fields.date",
 	});
 
-	allPosts.items.sort(orderEntriesByDate);
-
 	const renderedPosts = await Promise.all(
-		allPosts.items.map(async (item) => {
-			const mdxSource = await renderToString(item.fields.previewContent, {
-				components: { a: PreviewLink },
-			});
+		allPosts.items.map(async (post) => {
+			const mdxSource = await serialize(post.fields.previewContent);
+			const id = post.fields.title.toLowerCase().replace(/ /g, "");
 			return {
 				mdxSource,
-				...item,
-			} as IBlogPost & { mdxSource: MdxRemote.Source };
+				id,
+				...post,
+			};
 		}),
 	);
 
-	return {
-		posts: renderedPosts,
-	};
+	return renderedPosts;
 }

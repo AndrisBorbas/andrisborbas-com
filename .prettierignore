@@ -1,0 +1,7 @@
+.cache
+package-lock.json
+/.next/
+/build/
+.vercel/
+*.tsbuildinfo
+*generated*
