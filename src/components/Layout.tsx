@@ -1,3 +1,4 @@
+import type { BoxProps } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import React, { HTMLProps } from "react";
@@ -6,11 +7,11 @@ import { Footer } from "./footer/Footer";
 import { Navbar } from "./navbar/Navbar";
 import { Stripes } from "./Stripes";
 
-export type LayoutProps = HTMLProps<HTMLDivElement>;
+export type LayoutProps = BoxProps;
 
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children, ...restProps }: LayoutProps) {
 	return (
-		<React.StrictMode>
+		<>
 			<Stripes />
 
 			<Navbar />
@@ -20,8 +21,10 @@ export function Layout({ children }: LayoutProps) {
 				justifyContent="space-between"
 				flexDirection="column"
 				minH="calc(100vh - 88px)"
+				{...restProps}
 			>
 				<Box
+					id="#"
 					as="main"
 					maxW={["100%", "540px", "720px", "960px", "1140px"]}
 					w="100%"
@@ -37,6 +40,6 @@ export function Layout({ children }: LayoutProps) {
 
 				<Footer />
 			</Box>
-		</React.StrictMode>
+		</>
 	);
 }

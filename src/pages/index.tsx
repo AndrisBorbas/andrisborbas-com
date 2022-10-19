@@ -7,10 +7,10 @@ import { useCallback, useEffect, useState } from "react";
 
 import { PostPreview } from "@/components/accordion/PostPreview";
 import { Layout } from "@/components/Layout";
-import { getCmsData } from "@/utils/contentful";
+import { getPosts } from "@/utils/contentful";
 
 export async function getStaticProps() {
-	const { posts } = await getCmsData();
+	const posts = await getPosts();
 
 	return {
 		props: {
@@ -19,9 +19,9 @@ export async function getStaticProps() {
 	};
 }
 
-export default function Index({
-	posts,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export type IndexProps = InferGetStaticPropsType<typeof getStaticProps>;
+
+export default function Index({ posts }: IndexProps) {
 	const router = useRouter();
 	const [opened, setOpened] = useState([0, 1]);
 
@@ -43,7 +43,7 @@ export default function Index({
 		console.log(opened);
 		const id = router.asPath.substring(
 			router.asPath.indexOf("#") + 1,
-			router.asPath.indexOf("?") !== -1
+			router.asPath.includes("?")
 				? router.asPath.indexOf("?")
 				: router.asPath.length,
 		);
@@ -65,7 +65,7 @@ export default function Index({
 			</Heading>
 			<Accordion
 				defaultIndex={[0, 1]}
-				onChange={updateOpened}
+				onChange={(indices) => updateOpened(indices as number[])}
 				index={opened}
 				allowMultiple
 				bg="hsla(220, 26%, 35%, 0.1875) !important"

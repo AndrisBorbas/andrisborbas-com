@@ -6,16 +6,14 @@
 			"@/*": ["*"],
 			"*": [""]
 		},
+		"strict": true,
 		"importsNotUsedAsValues": "error",
-		"isolatedModules": true,
-		"strict": true
+		"plugins": [
+			{
+				"name": "typescript-plugin-css-modules"
+			}
+		]
 	},
-	"include": [
-		"*.config.js",
-		"next-env.d.ts",
-		"**/*.ts",
-		"**/*.tsx",
-		"./getContentfulEnvironment.js"
-	],
-	"exclude": ["node_modules"]
+	"include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+	"exclude": ["node_modules/", ".next/", "src/@types/generated"]
 }

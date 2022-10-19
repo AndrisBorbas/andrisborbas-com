@@ -1,5 +1,4 @@
 import { Box, Grid } from "@chakra-ui/react";
-import React from "react";
 
 export function Stripes() {
 	return (
@@ -15,7 +14,8 @@ export function Stripes() {
 			{Array.from(Array(3).keys()).map((i) => (
 				<Grid
 					key={i}
-					grid="repeat(6, 175px)/repeat(10, 1fr)"
+					row="repeat(6, 175px)"
+					column="repeat(10, 1fr)"
 					transformOrigin={0}
 					transform="skewY(-15deg)"
 					background="linear-gradient(175grad,

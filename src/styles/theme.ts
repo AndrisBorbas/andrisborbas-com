@@ -14,6 +14,13 @@ export const defaultTheme = extendTheme({
 
 export const cvTheme = extendTheme({
 	config,
+	styles: {
+		global: {
+			"html, body": {
+				minWidth: "1300px",
+			},
+		},
+	},
 	fonts: {
 		Lato: 'Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
 		heading:

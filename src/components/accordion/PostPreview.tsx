@@ -82,7 +82,7 @@ export function PostPreview({
 							_hover={{
 								color: "blue.300",
 							}}
-							alignSelf="flex-end"
+							alignSelf="center"
 							mr={3}
 						>
 							<LinkIcon w={6} h={6} p={1} mb="2px" />
@@ -110,7 +110,7 @@ export function PostPreview({
 				>
 					{previewImage !== undefined && previewVideo === undefined && (
 						<Img
-							src={previewImage.fields.file.url}
+							src={previewImage.fields.file?.url}
 							ml={[0, 0, 4]}
 							mb={["1rem", "1rem", "auto"]}
 							// maxW={400}
@@ -144,8 +144,8 @@ export function PostPreview({
 								autoPlay
 								muted
 								loop
-								src={previewVideo.fields.file.url}
-								poster={previewImage ? previewImage.fields.file.url : ""}
+								src={previewVideo.fields.file?.url}
+								poster={previewImage ? previewImage.fields.file?.url : ""}
 								borderRadius="15px"
 								// position="absolute"
 								// top={0}

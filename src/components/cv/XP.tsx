@@ -65,11 +65,11 @@ export function SideBySide({ title, description }: SideBySideProps) {
 export type TwoLinerProps = {
 	title: ReactNode;
 	description: ReactNode;
-} & BoxProps;
+} & Omit<BoxProps, "title" | "description">;
 
-export function TwoLiner({ title, description }: TwoLinerProps) {
+export function TwoLiner({ title, description, ...restProps }: TwoLinerProps) {
 	return (
-		<Box>
+		<Box {...restProps}>
 			<Heading as="h5" fontSize="2xl" fontWeight="medium">
 				{title}
 			</Heading>

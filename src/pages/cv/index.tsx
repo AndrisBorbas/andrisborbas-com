@@ -53,8 +53,11 @@ export default function Cv() {
 					}
 				`}
 			>
-				Print this page <Kbd>CTRL</Kbd> + <Kbd>P</Kbd> or <Kbd>⌘</Kbd> +{" "}
-				<Kbd>P</Kbd>, to download my résumé. (A3 paper size recommended)
+				To download my résumé, print this page to PDF with <Kbd>CTRL</Kbd> +{" "}
+				<Kbd>P</Kbd> or <Kbd>⌘</Kbd> + <Kbd>P</Kbd>.{" "}
+				<Text as="i" fontSize="sm" color="gray.300">
+					(A3 paper size recommended, with background graphics enabled)
+				</Text>
 			</Heading>
 			<ChakraProvider theme={cvTheme}>
 				<Box
@@ -62,7 +65,6 @@ export default function Cv() {
 					shadow="0 2px 5px 3px rgba(0, 0, 0, 0.3)"
 					color="gray.800"
 					p="8"
-					// minW={1140}
 					pos="relative"
 					css={css`
 						@media print {
@@ -75,7 +77,7 @@ export default function Cv() {
 					{/* Heading */}
 
 					<Grid
-						templateColumns={["1fr", "1fr", "1fr 2fr"]}
+						templateColumns="1fr 2fr"
 						gap="8"
 						css={css`
 							@media print {
@@ -187,11 +189,95 @@ export default function Cv() {
 						/>
 					</Grid>
 
+					{/* Experience */}
+
+					<CVMarker>Experience</CVMarker>
+					<Grid templateColumns="1fr 3fr" gap={4} mt={2}>
+						<CVTitle>2021-2022</CVTitle>
+						<TwoLiner
+							title={
+								<Link
+									href="https://neocoregames.com/en"
+									target="_blank"
+									passHref
+								>
+									<ChakraLink>NeocoreGames</ChakraLink>
+								</Link>
+							}
+							description={
+								<Link
+									href="https://store.steampowered.com/app/1157390/King_Arthur_Knights_Tale"
+									target="_blank"
+									passHref
+								>
+									<ChakraLink>
+										Game Tools Developer on King Arthur Knight&apos;s Tale
+									</ChakraLink>
+								</Link>
+							}
+						/>
+						<CVTitle>2020-2022</CVTitle>
+						<TwoLiner
+							title={
+								<Link
+									href="https://destinylauncher.net"
+									target="_blank"
+									passHref
+								>
+									<ChakraLink>Destiny Launcher Website</ChakraLink>
+								</Link>
+							}
+							description={
+								<Link
+									href="https://github.com/AndrisBorbas/destiny-launcher"
+									target="_blank"
+									passHref
+								>
+									<ChakraLink>Website Developer</ChakraLink>
+								</Link>
+							}
+						/>
+						<CVTitle>2021</CVTitle>
+						<TwoLiner
+							title={
+								<Link
+									href="https://2021.konferencia.simonyi.bme.hu"
+									target="_blank"
+									passHref
+								>
+									<ChakraLink>18. Simonyi Konferencia Website</ChakraLink>
+								</Link>
+							}
+							description={
+								<Link
+									href="https://github.com/simonyiszk/konf-2021-web"
+									target="_blank"
+									passHref
+								>
+									<ChakraLink>Website Developer</ChakraLink>
+								</Link>
+							}
+						/>
+						<CVTitle>2019-2022</CVTitle>
+						<TwoLiner
+							title={
+								<Link
+									href="https://github.com/AndrisBorbas"
+									target="_blank"
+									passHref
+								>
+									<ChakraLink>More projects on my GitHub</ChakraLink>
+								</Link>
+							}
+							description="Developer"
+						/>
+					</Grid>
+
 					{/* Education */}
 
 					<CVMarker>Education</CVMarker>
 					<Grid templateColumns="1fr 3fr" gap={4} mt={2}>
-						<CVTitle>2018-2022</CVTitle>
+						<CVTitle>2018-2023</CVTitle>
 						<TwoLiner
 							title="Budapest University of Technology and Economics"
 							description="Computer Engineering BSc"
@@ -234,16 +320,16 @@ export default function Cv() {
 									description="Create functional websites"
 								/>
 							</XP>
-							<XP level={2}>
+							<XP level={3}>
 								<SideBySide
-									title="Java / C#"
-									description="Develop complete applications"
+									title="C / C++"
+									description="Develop with custom libraries"
 								/>
 							</XP>
 							<XP level={2}>
 								<SideBySide
-									title="C / C++"
-									description="Develop with custom libraries"
+									title="Java / C#"
+									description="Develop complete applications"
 								/>
 							</XP>
 						</Grid>
@@ -252,32 +338,20 @@ export default function Cv() {
 						<Grid templateColumns="auto 1fr 2fr" gap={2}>
 							<XP level={3}>
 								<SideBySide
-									title="Unreal Engine 4"
-									description="Shaders, gameplay features, level design"
-								/>
-							</XP>
-							<XP level={3}>
-								<SideBySide
-									title="Substance Designer"
-									description="Create organic and artificial materials"
-								/>
-							</XP>
-							<XP level={2}>
-								<SideBySide
 									title="Perforce / Git"
 									description="Set up and maintain large projects"
 								/>
 							</XP>
-							<XP level={2}>
+							<XP level={3}>
 								<SideBySide
-									title="Photoshop"
-									description="Edit and create photos/illustrations"
+									title="Photoshop / Illustrator"
+									description="Edit and create photos / illustrations"
 								/>
 							</XP>
-							<XP level={2}>
+							<XP level={3}>
 								<SideBySide
-									title="Illustrator"
-									description="Create illustrations/mockups"
+									title="Unreal Engine 4"
+									description="Shaders, gameplay features, level design"
 								/>
 							</XP>
 							<XP level={2}>
@@ -286,16 +360,16 @@ export default function Cv() {
 									description="Cut and edit movies"
 								/>
 							</XP>
-							<XP level={1}>
+							<XP level={2}>
 								<SideBySide
-									title="Blender"
-									description="Model low poly and hard surface meshes"
+									title="Substance Designer"
+									description="Create organic and artificial materials"
 								/>
 							</XP>
 							<XP level={1}>
 								<SideBySide
-									title="Unity"
-									description="Basic gameplay features"
+									title="Blender"
+									description="Model low poly and hard surface meshes"
 								/>
 							</XP>
 						</Grid>
@@ -303,7 +377,7 @@ export default function Cv() {
 
 					{/* BottomText */}
 
-					<Text fontSize="sm" mt={12} align="right">
+					<Text fontSize="sm" mt={4} align="right">
 						<Box as="span" fontWeight="bold" fontSize="md">
 							*
 						</Box>
@@ -323,7 +397,11 @@ export default function Cv() {
 						`}
 					>
 						This PDF was generated from my website{" "}
-						<ChakraLink color="blue.500" href="https://andrisborbas.com">
+						<ChakraLink
+							color="blue.500"
+							href="https://next.andrisborbas.com"
+							target="_blank"
+						>
 							https://andrisborbas.com
 						</ChakraLink>
 					</Text>

@@ -1,4 +1,4 @@
-import { Box, Link, Text } from "@chakra-ui/react";
+import { Box, Flex, Link, Text } from "@chakra-ui/react";
 import { css } from "@emotion/react";
 import React from "react";
 
@@ -6,7 +6,6 @@ export function Footer() {
 	return (
 		<Box
 			as="footer"
-			h="60px"
 			w="100%"
 			bottom={0}
 			left={0}
@@ -25,29 +24,34 @@ export function Footer() {
 		>
 			<Box
 				maxW={["100%", "540px", "720px", "960px", "1140px"]}
-				h="100%"
 				mx="auto"
 				my="auto"
 			>
-				<Text pb={2} my="auto">
-					Built with ❤,{" "}
-					<Link href="https://nextjs.org" isExternal>
-						Next.JS
-					</Link>{" "}
-					and{" "}
-					<Link href="https://chakra-ui.com/" isExternal>
-						Chakra-UI
-					</Link>{" "}
-					in{" "}
-					<span role="img" aria-label="HU" aria-labelledby="HU">
-						🇭🇺
-					</span>
-					<Text as="span" float="right" display={["none", "inherit"]}>
-						<Link href="https://twitter.com/AndrisBorbas" isExternal>
-							© 2021 AndrisBorbas
+				<Flex
+					flexDir={["column", "row"]}
+					justifyContent={["center", "space-between"]}
+					alignItems={["initial", "center"]}
+				>
+					<Text alignSelf={["center", "center"]}>
+						Built with ❤,{" "}
+						<Link href="https://nextjs.org" isExternal>
+							Next.JS
+						</Link>{" "}
+						and{" "}
+						<Link href="https://chakra-ui.com/" isExternal>
+							Chakra-UI
+						</Link>{" "}
+						in{" "}
+						<span role="img" aria-label="HU" aria-labelledby="HU">
+							🇭🇺
+						</span>
+					</Text>
+					<Text alignSelf={["center", "center"]}>
+						<Link href="https://github.com/AndrisBorbas" isExternal>
+							© 2018-{new Date().getFullYear()} AndrisBorbas
 						</Link>
 					</Text>
-				</Text>
+				</Flex>
 			</Box>
 		</Box>
 	);
