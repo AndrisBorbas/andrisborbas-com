@@ -1,0 +1,26 @@
+---
+type Props = {
+	title?: string | undefined;
+	description?: string | undefined;
+};
+
+const {
+	title = "Andris Borbás's Personal Site",
+	description = "The personal site of Andris Borbás",
+} = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="description" property="og:description" content={description} />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+<title>{title}</title>
+
+<link rel="icon" type="" href="/favicon.png" />
+
+<script
+	async
+	defer
+	src="https://succ.andrisborbas.com/succ.js"
+	data-website-id="565bda1a-64e9-4363-8fb3-fde7632e83a9"
+></script>

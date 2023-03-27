@@ -1,19 +1,7 @@
 {
-	"extends": "@tsconfig/next/tsconfig.json",
-	"compilerOptions": {
-		"baseUrl": "./src/",
-		"paths": {
-			"@/*": ["*"],
-			"*": [""]
-		},
-		"strict": true,
-		"importsNotUsedAsValues": "error",
-		"plugins": [
-			{
-				"name": "typescript-plugin-css-modules"
-			}
-		]
-	},
-	"include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
-	"exclude": ["node_modules/", ".next/", "src/@types/generated"]
+  "extends": "astro/tsconfigs/strictest",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
+  }
 }
