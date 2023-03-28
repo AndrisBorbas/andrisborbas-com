@@ -9,33 +9,35 @@ import MainHead from "../components/layout/MainHead.astro";
 import Nav from "../components/layout/Nav.astro";
 import Footer from "../components/layout/Footer.astro";
 
-type Props = {
+interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
-	className?: string | undefined;
-};
+	class?: string | undefined;
+}
 
-const { title, description, className } = Astro.props;
+const { title, description, class: className } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
 		<MainHead title={title} description={description} />
 	</head>
-	<body class="relative flex min-h-screen flex-col">
+
+	<body class="flex min-h-screen flex-col bg-slate-900 text-white">
 		<Nav />
-		<main class:list={["", className]}>
+
+		<main class:list={["my-8 sm:my-16", className]}>
 			<slot />
 		</main>
+
 		<Footer />
 
 		<script>
 			// Add “loaded” class once the document has completely loaded.
-			addEventListener("load", () =>
-				document.documentElement.classList.add("loaded"),
-			);
+			function addLoadedClass() {
+				document.documentElement.classList.add("loaded");
+			}
+			addEventListener("load", () => addLoadedClass);
 		</script>
-
-		<style></style>
 	</body>
 </html>

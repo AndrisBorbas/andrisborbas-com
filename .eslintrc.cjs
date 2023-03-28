@@ -3,10 +3,6 @@ module.exports = {
 	root: true,
 	extends: [
 		"plugin:astro/recommended",
-		"airbnb-base",
-		"airbnb-typescript/base",
-		"plugin:@typescript-eslint/recommended",
-		"plugin:@typescript-eslint/strict",
 		"plugin:eslint-comments/recommended",
 		"plugin:tailwindcss/recommended",
 		"prettier",

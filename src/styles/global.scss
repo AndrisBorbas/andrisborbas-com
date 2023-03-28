@@ -8,12 +8,6 @@ html {
 	@apply scroll-smooth;
 }
 
-html,
-body {
-	height: 100%;
-}
-
 body {
 	-webkit-font-smoothing: antialiased;
-	@apply bg-slate-900 text-white;
 }
