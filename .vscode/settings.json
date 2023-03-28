@@ -4,5 +4,15 @@
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
 	},
-	"typescript.tsdk": "node_modules\\typescript\\lib"
+	"editor.autoClosingBrackets": "languageDefined",
+	"typescript.tsdk": "node_modules\\typescript\\lib",
+	"prettier.documentSelectors": ["**/*.astro"],
+	"eslint.validate": [
+		"javascript",
+		"javascriptreact",
+		"html",
+		"typescriptreact",
+		"typescript",
+		"astro"
+	]
 }

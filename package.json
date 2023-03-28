@@ -14,8 +14,8 @@
 		"fix:eslint": "npm run lint:eslint -- --fix",
 		"fix:prettier": "npm run lint:prettier -- --write",
 		"lint": "run-p lint:*",
-		"lint:prettier": "prettier --check --ignore-unknown --ignore-path ./.prettierignore .",
-		"lint:eslint": "eslint --ext .js,.ts,.tsx,.astro --ignore-path ./.gitignore .",
+		"lint:prettier": "prettier --check --ignore-unknown --plugin-search-dir=. --ignore-path ./.prettierignore .",
+		"lint:eslint": "eslint --ext .js,.ts,.tsx,.astro,.cjs --ignore-path ./.gitignore .",
 		"lint:typescript": "tsc --noEmit"
 	},
 	"dependencies": {

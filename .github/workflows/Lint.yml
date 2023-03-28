@@ -35,4 +35,4 @@ jobs:
           eslint_args: --ignore-path ./.gitignore .
           eslint_extensions: js,ts,tsx,astro
           prettier: true
-          prettier_args: --ignore-path ./.prettierignore .
+          prettier_args: --check --ignore-unknown --plugin-search-dir=. --ignore-path ./.prettierignore .
