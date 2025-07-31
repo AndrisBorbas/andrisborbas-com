@@ -207,14 +207,14 @@ export default function Cv() {
 							}
 							description={
 								<>
-									Game Tools Developer on
+									Game Tools Developer on{" "}
 									<Link
 										href="https://store.steampowered.com/app/1157390/King_Arthur_Knights_Tale"
 										target="_blank"
 										passHref
 									>
 										<ChakraLink>King Arthur Knight&apos;s Tale</ChakraLink>
-									</Link>
+									</Link>{" "}
 									& Unannounced Project
 								</>
 							}
