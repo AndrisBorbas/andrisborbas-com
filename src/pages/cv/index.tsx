@@ -53,8 +53,8 @@ export default function Cv() {
 					}
 				`}
 			>
-				To download my résumé, print this page to PDF with <Kbd>CTRL</Kbd> +{" "}
-				<Kbd>P</Kbd> or <Kbd>⌘</Kbd> + <Kbd>P</Kbd>. <br />
+				To download my résumé, print this page to PDF with <Kbd>CTRL / ⌘</Kbd> +{" "}
+				<Kbd>P</Kbd>. <br />
 				<Text as="i" fontSize="sm" color="gray.300">
 					(A3 paper size recommended, with no margins and background graphics
 					enabled)
@@ -194,7 +194,7 @@ export default function Cv() {
 
 					<CVMarker>Experience</CVMarker>
 					<Grid templateColumns="1fr 3fr" gap={4} mt={2}>
-						<CVTitle>2021-2022</CVTitle>
+						<CVTitle>2021-</CVTitle>
 						<TwoLiner
 							title={
 								<Link
@@ -206,18 +206,37 @@ export default function Cv() {
 								</Link>
 							}
 							description={
+								<>
+									Game Tools Developer on
+									<Link
+										href="https://store.steampowered.com/app/1157390/King_Arthur_Knights_Tale"
+										target="_blank"
+										passHref
+									>
+										<ChakraLink>King Arthur Knight&apos;s Tale</ChakraLink>
+									</Link>
+									& Unannounced Project
+								</>
+							}
+						/>
+						<CVTitle>2023</CVTitle>
+						<TwoLiner
+							title={
+								<Link href="https://smitedle.net" target="_blank" passHref>
+									<ChakraLink>Smitedle Website</ChakraLink>
+								</Link>
+							}
+							description={
 								<Link
-									href="https://store.steampowered.com/app/1157390/King_Arthur_Knights_Tale"
+									href="https://github.com/AndrisBorbas/smitedle"
 									target="_blank"
 									passHref
 								>
-									<ChakraLink>
-										Game Tools Developer on King Arthur Knight&apos;s Tale
-									</ChakraLink>
+									<ChakraLink>Website Developer</ChakraLink>
 								</Link>
 							}
 						/>
-						<CVTitle>2020-2022</CVTitle>
+						<CVTitle>2020-</CVTitle>
 						<TwoLiner
 							title={
 								<Link
@@ -259,7 +278,7 @@ export default function Cv() {
 								</Link>
 							}
 						/>
-						<CVTitle>2019-2022</CVTitle>
+						<CVTitle>2019-</CVTitle>
 						<TwoLiner
 							title={
 								<Link
